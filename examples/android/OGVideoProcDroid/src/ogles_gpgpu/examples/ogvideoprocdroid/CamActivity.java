@@ -284,7 +284,6 @@ public class CamActivity
         // application shutdown
         if (camTexture == null || windowSurface == null) return;
 
-	//eglCore.makeCurrent(windowSurface); //  public void makeCurrent(EGLSurface eglSurface)
         windowSurface.makeCurrent();
 
         // update camera frame texture
@@ -529,6 +528,8 @@ public class CamActivity
         private ByteBuffer imgData;						// passed output pixel data as ARGB bytes values
         private float[] outputHist = new float[256];	// output histogram
 
+        final Object imgDataLock = new Object();
+
         /**
          * Thread run loop. Will run until terminate() is called.
          */
@@ -539,8 +540,15 @@ public class CamActivity
             running = true;
 
             while (running) {
-                // check if new image data was received
-                if (imgData != null) {
+
+                synchronized(imgDataLock) {
+
+                    try { // Wait for valid imgData notification
+                        imgDataLock.wait();
+                    } catch( InterruptedException e ) {
+                        break;
+                    }
+
                     // calculate the histogram from the image data
                     calcHist(imgData);
 
@@ -580,11 +588,18 @@ public class CamActivity
          * only valid until the next call to "getOutputPixels()"!
          */
         public void update() {
-            if (imgData != null || !running) return;	// image data already in use right now
 
-            // get reference to current result image data
-            imgData = ogWrapper.getOutputPixels();
-            imgData.rewind();
+            // Just skip if no processing task is running
+            if(running & imgData == null) {
+
+                // For performance, keep synchronized after null check above:
+                synchronized(imgDataLock) {
+                    // get reference to current result image data
+                    imgData = ogWrapper.getOutputPixels();
+                    imgData.rewind();
+                    imgDataLock.notify();
+                }
+            }
         }
 
         /**
