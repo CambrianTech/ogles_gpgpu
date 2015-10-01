@@ -68,7 +68,7 @@ public class CamActivity
     SurfaceTexture.OnFrameAvailableListener {
     private final static String TAG = "CamActivity";
 
-    private final static int CAM_FPS = 30;		/** requested camera frames. change this if it is not supported by your device */
+    private final static int CAM_FPS = 30;    /** requested camera frames. change this if it is not supported by your device */
     private final static int CAM_FRAME_TEXTURE_TARGET = GLES11Ext.GL_TEXTURE_EXTERNAL_OES;
 
     /**
@@ -143,7 +143,7 @@ public class CamActivity
 
     /**
      * Activity resume - create ogles_gpgpu wrapper object, create and start
-     * image processing thread, start the camera und re-initialize the surface
+     * image processing thread, start the camera and re-initialize the surface
      * if it already exists (screen was switched off before).
      */
     @Override
@@ -176,7 +176,7 @@ public class CamActivity
         // the screen was turned off and on again
         if (surfaceHolder != null) {
             Log.i(TAG, "surface holder already existent");
-            mainInit(surfaceHolder, false);	// re-initialize everything in this case
+            mainInit(surfaceHolder, false);  // re-initialize everything in this case
         } else {
             Log.i(TAG, "surface holder will be set automatically");
             // surfaceCreated() will be called automatically later when the
@@ -369,7 +369,7 @@ public class CamActivity
      * Open the camera device.
      */
     private void startCam() {
-        if (cam != null) return;	// already existing -> abort
+        if (cam != null) return;  // already existing -> abort
 
         Log.i(TAG, "starting camera");
 
@@ -525,8 +525,8 @@ public class CamActivity
      */
     private class CPUImgProcThread extends Thread {
         private boolean running = false;
-        private ByteBuffer imgData;						// passed output pixel data as ARGB bytes values
-        private float[] outputHist = new float[256];	// output histogram
+        private ByteBuffer imgData;            // passed output pixel data as ARGB bytes values
+        private float[] outputHist = new float[256];  // output histogram
 
         final Object imgDataLock = new Object();
 
@@ -624,7 +624,7 @@ public class CamActivity
 
             // count values and store them in absolute histogram
             while (intData.hasRemaining()) {
-                int grayVal = (intData.get() >> 8) & 0x000000FF;	// get the "B" channel
+                int grayVal = (intData.get() >> 8) & 0x000000FF;  // get the "B" channel
 
                 outputHist[grayVal] += 1.0f;
             }
