@@ -162,7 +162,7 @@ void fourCCStringFromCode(int code, char fourCC[5]) {
     if (!prepared) return;
     
     // render output directly to screen
-    outputDispRenderer->render();
+    outputDispRenderer->render(0);
 }
 
 #pragma mark private methods

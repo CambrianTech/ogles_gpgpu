@@ -12,7 +12,7 @@ void Core::printCVPixelBuffer(const char* tag, void* ptr)
 
 void* Core::getCurrentEAGLContext()
 {
-    return [EAGLContext currentContext];
+    return (__bridge void*)[EAGLContext currentContext];
 }
 
 } // namespace ogles_gpgpu
