@@ -22,9 +22,105 @@
 		2802C4C01ACFF18F00E77EA8 /* thresh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2802C4BF1ACFF18F00E77EA8 /* thresh.cpp */; };
 		2802C4C21ACFF19900E77EA8 /* tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2802C4C11ACFF19900E77EA8 /* tools.cpp */; };
 		2802C4C41ACFF1B500E77EA8 /* memtransfer_ios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2802C4C31ACFF1B500E77EA8 /* memtransfer_ios.cpp */; };
-		2802C4C71ACFF20800E77EA8 /* common in Headers */ = {isa = PBXBuildFile; fileRef = 2802C4A41ACFF0DE00E77EA8 /* common */; settings = {ATTRIBUTES = (Public, ); }; };
 		2802C4C81ACFF20E00E77EA8 /* ogles_gpgpu.h in Headers */ = {isa = PBXBuildFile; fileRef = 2802C4A61ACFF0F300E77EA8 /* ogles_gpgpu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2802C4C91ACFF21000E77EA8 /* platform in Headers */ = {isa = PBXBuildFile; fileRef = 2802C4A51ACFF0E900E77EA8 /* platform */; settings = {ATTRIBUTES = (Public, ); }; };
+		E73F067D1CA0A22D00E25650 /* common_includes.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F05FF1CA0A22D00E25650 /* common_includes.h */; };
+		E73F067E1CA0A22D00E25650 /* core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06001CA0A22D00E25650 /* core.cpp */; };
+		E73F067F1CA0A22D00E25650 /* core.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06011CA0A22D00E25650 /* core.h */; };
+		E73F06801CA0A22E00E25650 /* fbo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06031CA0A22D00E25650 /* fbo.cpp */; };
+		E73F06811CA0A22E00E25650 /* fbo.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06041CA0A22D00E25650 /* fbo.h */; };
+		E73F06821CA0A22E00E25650 /* memtransfer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06051CA0A22D00E25650 /* memtransfer.cpp */; };
+		E73F06831CA0A22E00E25650 /* memtransfer.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06061CA0A22D00E25650 /* memtransfer.h */; };
+		E73F06841CA0A22E00E25650 /* memtransfer_factory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06071CA0A22D00E25650 /* memtransfer_factory.cpp */; };
+		E73F06851CA0A22E00E25650 /* memtransfer_factory.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06081CA0A22D00E25650 /* memtransfer_factory.h */; };
+		E73F06861CA0A22E00E25650 /* memtransfer_optimized.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06091CA0A22D00E25650 /* memtransfer_optimized.h */; };
+		E73F06871CA0A22E00E25650 /* shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F060A1CA0A22D00E25650 /* shader.cpp */; };
+		E73F06881CA0A22E00E25650 /* shader.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F060B1CA0A22D00E25650 /* shader.h */; };
+		E73F06891CA0A22E00E25650 /* macros.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F060D1CA0A22D00E25650 /* macros.h */; };
+		E73F068A1CA0A22E00E25650 /* adapt_thresh.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F060F1CA0A22D00E25650 /* adapt_thresh.h */; };
+		E73F068B1CA0A22E00E25650 /* filterprocbase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06111CA0A22D00E25650 /* filterprocbase.cpp */; };
+		E73F068C1CA0A22E00E25650 /* filterprocbase.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06121CA0A22D00E25650 /* filterprocbase.h */; };
+		E73F068D1CA0A22E00E25650 /* multipassproc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06131CA0A22D00E25650 /* multipassproc.cpp */; };
+		E73F068E1CA0A22E00E25650 /* multipassproc.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06141CA0A22D00E25650 /* multipassproc.h */; };
+		E73F068F1CA0A22E00E25650 /* multiprocinterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06151CA0A22D00E25650 /* multiprocinterface.cpp */; };
+		E73F06901CA0A22E00E25650 /* multiprocinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06161CA0A22D00E25650 /* multiprocinterface.h */; };
+		E73F06911CA0A22E00E25650 /* procbase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06171CA0A22D00E25650 /* procbase.cpp */; };
+		E73F06921CA0A22E00E25650 /* procbase.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06181CA0A22D00E25650 /* procbase.h */; };
+		E73F06931CA0A22E00E25650 /* procinterface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06191CA0A22D00E25650 /* procinterface.cpp */; };
+		E73F06941CA0A22E00E25650 /* procinterface.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F061A1CA0A22D00E25650 /* procinterface.h */; };
+		E73F06951CA0A22E00E25650 /* blend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F061C1CA0A22D00E25650 /* blend.cpp */; };
+		E73F06961CA0A22E00E25650 /* blend.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F061D1CA0A22D00E25650 /* blend.h */; };
+		E73F06971CA0A22E00E25650 /* box_opt.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F061E1CA0A22D00E25650 /* box_opt.h */; };
+		E73F06981CA0A22E00E25650 /* diff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F061F1CA0A22D00E25650 /* diff.cpp */; };
+		E73F06991CA0A22E00E25650 /* diff.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06201CA0A22D00E25650 /* diff.h */; };
+		E73F069A1CA0A22E00E25650 /* disp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06211CA0A22D00E25650 /* disp.cpp */; };
+		E73F069B1CA0A22E00E25650 /* disp.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06221CA0A22D00E25650 /* disp.h */; };
+		E73F069C1CA0A22E00E25650 /* fifo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06231CA0A22D00E25650 /* fifo.cpp */; };
+		E73F069D1CA0A22E00E25650 /* fifo.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06241CA0A22D00E25650 /* fifo.h */; };
+		E73F069E1CA0A22E00E25650 /* filter3x3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06251CA0A22D00E25650 /* filter3x3.cpp */; };
+		E73F069F1CA0A22E00E25650 /* filter3x3.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06261CA0A22D00E25650 /* filter3x3.h */; };
+		E73F06A01CA0A22E00E25650 /* fir3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06271CA0A22D00E25650 /* fir3.cpp */; };
+		E73F06A11CA0A22E00E25650 /* fir3.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06281CA0A22D00E25650 /* fir3.h */; };
+		E73F06A21CA0A22E00E25650 /* flow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06291CA0A22D00E25650 /* flow.cpp */; };
+		E73F06A31CA0A22E00E25650 /* flow.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F062A1CA0A22D00E25650 /* flow.h */; };
+		E73F06A41CA0A22E00E25650 /* gauss.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F062B1CA0A22D00E25650 /* gauss.h */; };
+		E73F06A51CA0A22E00E25650 /* gauss_opt.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F062C1CA0A22D00E25650 /* gauss_opt.h */; };
+		E73F06A61CA0A22E00E25650 /* grad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F062D1CA0A22D00E25650 /* grad.cpp */; };
+		E73F06A71CA0A22E00E25650 /* grad.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F062E1CA0A22D00E25650 /* grad.h */; };
+		E73F06A81CA0A22E00E25650 /* grayscale.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F062F1CA0A22D00E25650 /* grayscale.cpp */; };
+		E73F06A91CA0A22E00E25650 /* grayscale.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06301CA0A22D00E25650 /* grayscale.h */; };
+		E73F06AA1CA0A22E00E25650 /* highpass.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06311CA0A22D00E25650 /* highpass.h */; };
+		E73F06AB1CA0A22E00E25650 /* iir.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06321CA0A22D00E25650 /* iir.cpp */; };
+		E73F06AC1CA0A22E00E25650 /* iir.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06331CA0A22D00E25650 /* iir.h */; };
+		E73F06AD1CA0A22E00E25650 /* ixyt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06341CA0A22D00E25650 /* ixyt.cpp */; };
+		E73F06AE1CA0A22E00E25650 /* ixyt.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06351CA0A22D00E25650 /* ixyt.h */; };
+		E73F06AF1CA0A22E00E25650 /* lbp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06361CA0A22D00E25650 /* lbp.cpp */; };
+		E73F06B01CA0A22E00E25650 /* lbp.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06371CA0A22D00E25650 /* lbp.h */; };
+		E73F06B11CA0A22E00E25650 /* lnorm.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06381CA0A22D00E25650 /* lnorm.h */; };
+		E73F06B21CA0A22E00E25650 /* lowpass.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06391CA0A22D00E25650 /* lowpass.h */; };
+		E73F06B31CA0A22E00E25650 /* median.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F063A1CA0A22D00E25650 /* median.cpp */; };
+		E73F06B41CA0A22E00E25650 /* median.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F063B1CA0A22D00E25650 /* median.h */; };
+		E73F06B51CA0A22E00E25650 /* adapt_thresh_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F063D1CA0A22D00E25650 /* adapt_thresh_pass.cpp */; };
+		E73F06B61CA0A22E00E25650 /* adapt_thresh_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F063E1CA0A22D00E25650 /* adapt_thresh_pass.h */; };
+		E73F06B71CA0A22E00E25650 /* box_opt_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F063F1CA0A22D00E25650 /* box_opt_pass.cpp */; };
+		E73F06B81CA0A22E00E25650 /* box_opt_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06401CA0A22D00E25650 /* box_opt_pass.h */; };
+		E73F06B91CA0A22E00E25650 /* gauss_opt_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06411CA0A22D00E25650 /* gauss_opt_pass.cpp */; };
+		E73F06BA1CA0A22E00E25650 /* gauss_opt_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06421CA0A22D00E25650 /* gauss_opt_pass.h */; };
+		E73F06BB1CA0A22E00E25650 /* gauss_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06431CA0A22D00E25650 /* gauss_pass.cpp */; };
+		E73F06BC1CA0A22E00E25650 /* gauss_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06441CA0A22D00E25650 /* gauss_pass.h */; };
+		E73F06BD1CA0A22E00E25650 /* local_norm_pass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06451CA0A22D00E25650 /* local_norm_pass.cpp */; };
+		E73F06BE1CA0A22E00E25650 /* local_norm_pass.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06461CA0A22D00E25650 /* local_norm_pass.h */; };
+		E73F06BF1CA0A22E00E25650 /* nms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06481CA0A22D00E25650 /* nms.cpp */; };
+		E73F06C01CA0A22E00E25650 /* nms.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06491CA0A22D00E25650 /* nms.h */; };
+		E73F06C11CA0A22E00E25650 /* pyramid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F064A1CA0A22D00E25650 /* pyramid.cpp */; };
+		E73F06C21CA0A22E00E25650 /* pyramid.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F064B1CA0A22D00E25650 /* pyramid.h */; };
+		E73F06C31CA0A22E00E25650 /* remap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F064C1CA0A22D00E25650 /* remap.cpp */; };
+		E73F06C41CA0A22E00E25650 /* remap.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F064D1CA0A22D00E25650 /* remap.h */; };
+		E73F06C51CA0A22E00E25650 /* shitomasi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F064E1CA0A22D00E25650 /* shitomasi.cpp */; };
+		E73F06C61CA0A22E00E25650 /* shitomasi.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F064F1CA0A22D00E25650 /* shitomasi.h */; };
+		E73F06C71CA0A22E00E25650 /* tensor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06511CA0A22D00E25650 /* tensor.cpp */; };
+		E73F06C81CA0A22E00E25650 /* tensor.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06521CA0A22D00E25650 /* tensor.h */; };
+		E73F06C91CA0A22E00E25650 /* three.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06531CA0A22D00E25650 /* three.cpp */; };
+		E73F06CA1CA0A22E00E25650 /* three.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06541CA0A22D00E25650 /* three.h */; };
+		E73F06CB1CA0A22E00E25650 /* thresh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06551CA0A22D00E25650 /* thresh.cpp */; };
+		E73F06CC1CA0A22E00E25650 /* thresh.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06561CA0A22D00E25650 /* thresh.h */; };
+		E73F06CD1CA0A22E00E25650 /* transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06571CA0A22D00E25650 /* transform.cpp */; };
+		E73F06CE1CA0A22E00E25650 /* transform.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06581CA0A22D00E25650 /* transform.h */; };
+		E73F06CF1CA0A22E00E25650 /* two.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06591CA0A22D00E25650 /* two.cpp */; };
+		E73F06D01CA0A22E00E25650 /* two.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F065A1CA0A22D00E25650 /* two.h */; };
+		E73F06D11CA0A22E00E25650 /* video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F065B1CA0A22D00E25650 /* video.cpp */; };
+		E73F06D21CA0A22E00E25650 /* video.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F065C1CA0A22D00E25650 /* video.h */; };
+		E73F06D31CA0A22E00E25650 /* yuv2rgb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F065D1CA0A22D00E25650 /* yuv2rgb.cpp */; };
+		E73F06D41CA0A22E00E25650 /* yuv2rgb.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F065E1CA0A22D00E25650 /* yuv2rgb.h */; };
+		E73F06D51CA0A22E00E25650 /* tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06601CA0A22D00E25650 /* tools.cpp */; };
+		E73F06D61CA0A22E00E25650 /* tools.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06611CA0A22D00E25650 /* tools.h */; };
+		E73F06D71CA0A22E00E25650 /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06621CA0A22D00E25650 /* types.cpp */; };
+		E73F06D81CA0A22E00E25650 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06631CA0A22D00E25650 /* types.h */; };
+		E73F06DF1CA0A22E00E25650 /* core.mm in Sources */ = {isa = PBXBuildFile; fileRef = E73F066E1CA0A22D00E25650 /* core.mm */; };
+		E73F06E01CA0A22E00E25650 /* gl_includes.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F066F1CA0A22D00E25650 /* gl_includes.h */; };
+		E73F06E11CA0A22E00E25650 /* memtransfer_ios.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E73F06701CA0A22D00E25650 /* memtransfer_ios.cpp */; };
+		E73F06E21CA0A22E00E25650 /* memtransfer_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06711CA0A22D00E25650 /* memtransfer_ios.h */; };
+		E73F06E31CA0A22E00E25650 /* gl_includes.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06741CA0A22D00E25650 /* gl_includes.h */; };
+		E73F06E41CA0A22E00E25650 /* memtransfer_generic.h in Headers */ = {isa = PBXBuildFile; fileRef = E73F06751CA0A22D00E25650 /* memtransfer_generic.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,8 +136,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2802C4A41ACFF0DE00E77EA8 /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; name = common; path = ../ogles_gpgpu/common; sourceTree = "<group>"; };
-		2802C4A51ACFF0E900E77EA8 /* platform */ = {isa = PBXFileReference; lastKnownFileType = folder; name = platform; path = ../ogles_gpgpu/platform; sourceTree = "<group>"; };
 		2802C4A61ACFF0F300E77EA8 /* ogles_gpgpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ogles_gpgpu.h; path = ../ogles_gpgpu/ogles_gpgpu.h; sourceTree = "<group>"; };
 		2802C4A71ACFF14100E77EA8 /* core.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = core.cpp; path = ../ogles_gpgpu/common/core.cpp; sourceTree = "<group>"; };
 		2802C4A91ACFF14800E77EA8 /* fbo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = fbo.cpp; path = ../ogles_gpgpu/common/gl/fbo.cpp; sourceTree = "<group>"; };
@@ -59,6 +153,112 @@
 		2802C4C11ACFF19900E77EA8 /* tools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tools.cpp; path = ../ogles_gpgpu/common/tools.cpp; sourceTree = "<group>"; };
 		2802C4C31ACFF1B500E77EA8 /* memtransfer_ios.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = memtransfer_ios.cpp; path = ../ogles_gpgpu/platform/ios/memtransfer_ios.cpp; sourceTree = "<group>"; };
 		28CDEBB01ACFF02000AF000D /* libogles_gpgpu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libogles_gpgpu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E73F05FF1CA0A22D00E25650 /* common_includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common_includes.h; sourceTree = "<group>"; };
+		E73F06001CA0A22D00E25650 /* core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = core.cpp; sourceTree = "<group>"; };
+		E73F06011CA0A22D00E25650 /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		E73F06031CA0A22D00E25650 /* fbo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fbo.cpp; sourceTree = "<group>"; };
+		E73F06041CA0A22D00E25650 /* fbo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fbo.h; sourceTree = "<group>"; };
+		E73F06051CA0A22D00E25650 /* memtransfer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memtransfer.cpp; sourceTree = "<group>"; };
+		E73F06061CA0A22D00E25650 /* memtransfer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memtransfer.h; sourceTree = "<group>"; };
+		E73F06071CA0A22D00E25650 /* memtransfer_factory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memtransfer_factory.cpp; sourceTree = "<group>"; };
+		E73F06081CA0A22D00E25650 /* memtransfer_factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memtransfer_factory.h; sourceTree = "<group>"; };
+		E73F06091CA0A22D00E25650 /* memtransfer_optimized.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memtransfer_optimized.h; sourceTree = "<group>"; };
+		E73F060A1CA0A22D00E25650 /* shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shader.cpp; sourceTree = "<group>"; };
+		E73F060B1CA0A22D00E25650 /* shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
+		E73F060C1CA0A22D00E25650 /* sugar.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sugar.cmake; sourceTree = "<group>"; };
+		E73F060D1CA0A22D00E25650 /* macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
+		E73F060F1CA0A22D00E25650 /* adapt_thresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adapt_thresh.h; sourceTree = "<group>"; };
+		E73F06111CA0A22D00E25650 /* filterprocbase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filterprocbase.cpp; sourceTree = "<group>"; };
+		E73F06121CA0A22D00E25650 /* filterprocbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filterprocbase.h; sourceTree = "<group>"; };
+		E73F06131CA0A22D00E25650 /* multipassproc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = multipassproc.cpp; sourceTree = "<group>"; };
+		E73F06141CA0A22D00E25650 /* multipassproc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multipassproc.h; sourceTree = "<group>"; };
+		E73F06151CA0A22D00E25650 /* multiprocinterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = multiprocinterface.cpp; sourceTree = "<group>"; };
+		E73F06161CA0A22D00E25650 /* multiprocinterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multiprocinterface.h; sourceTree = "<group>"; };
+		E73F06171CA0A22D00E25650 /* procbase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = procbase.cpp; sourceTree = "<group>"; };
+		E73F06181CA0A22D00E25650 /* procbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = procbase.h; sourceTree = "<group>"; };
+		E73F06191CA0A22D00E25650 /* procinterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = procinterface.cpp; sourceTree = "<group>"; };
+		E73F061A1CA0A22D00E25650 /* procinterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = procinterface.h; sourceTree = "<group>"; };
+		E73F061B1CA0A22D00E25650 /* sugar.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sugar.cmake; sourceTree = "<group>"; };
+		E73F061C1CA0A22D00E25650 /* blend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = blend.cpp; sourceTree = "<group>"; };
+		E73F061D1CA0A22D00E25650 /* blend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = blend.h; sourceTree = "<group>"; };
+		E73F061E1CA0A22D00E25650 /* box_opt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = box_opt.h; sourceTree = "<group>"; };
+		E73F061F1CA0A22D00E25650 /* diff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = diff.cpp; sourceTree = "<group>"; };
+		E73F06201CA0A22D00E25650 /* diff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = diff.h; sourceTree = "<group>"; };
+		E73F06211CA0A22D00E25650 /* disp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = disp.cpp; sourceTree = "<group>"; };
+		E73F06221CA0A22D00E25650 /* disp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = disp.h; sourceTree = "<group>"; };
+		E73F06231CA0A22D00E25650 /* fifo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fifo.cpp; sourceTree = "<group>"; };
+		E73F06241CA0A22D00E25650 /* fifo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fifo.h; sourceTree = "<group>"; };
+		E73F06251CA0A22D00E25650 /* filter3x3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = filter3x3.cpp; sourceTree = "<group>"; };
+		E73F06261CA0A22D00E25650 /* filter3x3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filter3x3.h; sourceTree = "<group>"; };
+		E73F06271CA0A22D00E25650 /* fir3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fir3.cpp; sourceTree = "<group>"; };
+		E73F06281CA0A22D00E25650 /* fir3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fir3.h; sourceTree = "<group>"; };
+		E73F06291CA0A22D00E25650 /* flow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = flow.cpp; sourceTree = "<group>"; };
+		E73F062A1CA0A22D00E25650 /* flow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = flow.h; sourceTree = "<group>"; };
+		E73F062B1CA0A22D00E25650 /* gauss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gauss.h; sourceTree = "<group>"; };
+		E73F062C1CA0A22D00E25650 /* gauss_opt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gauss_opt.h; sourceTree = "<group>"; };
+		E73F062D1CA0A22D00E25650 /* grad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = grad.cpp; sourceTree = "<group>"; };
+		E73F062E1CA0A22D00E25650 /* grad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grad.h; sourceTree = "<group>"; };
+		E73F062F1CA0A22D00E25650 /* grayscale.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = grayscale.cpp; sourceTree = "<group>"; };
+		E73F06301CA0A22D00E25650 /* grayscale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grayscale.h; sourceTree = "<group>"; };
+		E73F06311CA0A22D00E25650 /* highpass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = highpass.h; sourceTree = "<group>"; };
+		E73F06321CA0A22D00E25650 /* iir.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = iir.cpp; sourceTree = "<group>"; };
+		E73F06331CA0A22D00E25650 /* iir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iir.h; sourceTree = "<group>"; };
+		E73F06341CA0A22D00E25650 /* ixyt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ixyt.cpp; sourceTree = "<group>"; };
+		E73F06351CA0A22D00E25650 /* ixyt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ixyt.h; sourceTree = "<group>"; };
+		E73F06361CA0A22D00E25650 /* lbp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lbp.cpp; sourceTree = "<group>"; };
+		E73F06371CA0A22D00E25650 /* lbp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lbp.h; sourceTree = "<group>"; };
+		E73F06381CA0A22D00E25650 /* lnorm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lnorm.h; sourceTree = "<group>"; };
+		E73F06391CA0A22D00E25650 /* lowpass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lowpass.h; sourceTree = "<group>"; };
+		E73F063A1CA0A22D00E25650 /* median.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = median.cpp; sourceTree = "<group>"; };
+		E73F063B1CA0A22D00E25650 /* median.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = median.h; sourceTree = "<group>"; };
+		E73F063D1CA0A22D00E25650 /* adapt_thresh_pass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = adapt_thresh_pass.cpp; sourceTree = "<group>"; };
+		E73F063E1CA0A22D00E25650 /* adapt_thresh_pass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adapt_thresh_pass.h; sourceTree = "<group>"; };
+		E73F063F1CA0A22D00E25650 /* box_opt_pass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = box_opt_pass.cpp; sourceTree = "<group>"; };
+		E73F06401CA0A22D00E25650 /* box_opt_pass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = box_opt_pass.h; sourceTree = "<group>"; };
+		E73F06411CA0A22D00E25650 /* gauss_opt_pass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gauss_opt_pass.cpp; sourceTree = "<group>"; };
+		E73F06421CA0A22D00E25650 /* gauss_opt_pass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gauss_opt_pass.h; sourceTree = "<group>"; };
+		E73F06431CA0A22D00E25650 /* gauss_pass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gauss_pass.cpp; sourceTree = "<group>"; };
+		E73F06441CA0A22D00E25650 /* gauss_pass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gauss_pass.h; sourceTree = "<group>"; };
+		E73F06451CA0A22D00E25650 /* local_norm_pass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = local_norm_pass.cpp; sourceTree = "<group>"; };
+		E73F06461CA0A22D00E25650 /* local_norm_pass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = local_norm_pass.h; sourceTree = "<group>"; };
+		E73F06471CA0A22D00E25650 /* sugar.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sugar.cmake; sourceTree = "<group>"; };
+		E73F06481CA0A22D00E25650 /* nms.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nms.cpp; sourceTree = "<group>"; };
+		E73F06491CA0A22D00E25650 /* nms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nms.h; sourceTree = "<group>"; };
+		E73F064A1CA0A22D00E25650 /* pyramid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pyramid.cpp; sourceTree = "<group>"; };
+		E73F064B1CA0A22D00E25650 /* pyramid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pyramid.h; sourceTree = "<group>"; };
+		E73F064C1CA0A22D00E25650 /* remap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = remap.cpp; sourceTree = "<group>"; };
+		E73F064D1CA0A22D00E25650 /* remap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remap.h; sourceTree = "<group>"; };
+		E73F064E1CA0A22D00E25650 /* shitomasi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shitomasi.cpp; sourceTree = "<group>"; };
+		E73F064F1CA0A22D00E25650 /* shitomasi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shitomasi.h; sourceTree = "<group>"; };
+		E73F06501CA0A22D00E25650 /* sugar.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sugar.cmake; sourceTree = "<group>"; };
+		E73F06511CA0A22D00E25650 /* tensor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tensor.cpp; sourceTree = "<group>"; };
+		E73F06521CA0A22D00E25650 /* tensor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tensor.h; sourceTree = "<group>"; };
+		E73F06531CA0A22D00E25650 /* three.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = three.cpp; sourceTree = "<group>"; };
+		E73F06541CA0A22D00E25650 /* three.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = three.h; sourceTree = "<group>"; };
+		E73F06551CA0A22D00E25650 /* thresh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = thresh.cpp; sourceTree = "<group>"; };
+		E73F06561CA0A22D00E25650 /* thresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thresh.h; sourceTree = "<group>"; };
+		E73F06571CA0A22D00E25650 /* transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = transform.cpp; sourceTree = "<group>"; };
+		E73F06581CA0A22D00E25650 /* transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transform.h; sourceTree = "<group>"; };
+		E73F06591CA0A22D00E25650 /* two.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = two.cpp; sourceTree = "<group>"; };
+		E73F065A1CA0A22D00E25650 /* two.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = two.h; sourceTree = "<group>"; };
+		E73F065B1CA0A22D00E25650 /* video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = video.cpp; sourceTree = "<group>"; };
+		E73F065C1CA0A22D00E25650 /* video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video.h; sourceTree = "<group>"; };
+		E73F065D1CA0A22D00E25650 /* yuv2rgb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = yuv2rgb.cpp; sourceTree = "<group>"; };
+		E73F065E1CA0A22D00E25650 /* yuv2rgb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = yuv2rgb.h; sourceTree = "<group>"; };
+		E73F065F1CA0A22D00E25650 /* sugar.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sugar.cmake; sourceTree = "<group>"; };
+		E73F06601CA0A22D00E25650 /* tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tools.cpp; sourceTree = "<group>"; };
+		E73F06611CA0A22D00E25650 /* tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
+		E73F06621CA0A22D00E25650 /* types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = types.cpp; sourceTree = "<group>"; };
+		E73F06631CA0A22D00E25650 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = types.h; sourceTree = "<group>"; };
+		E73F066E1CA0A22D00E25650 /* core.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = core.mm; sourceTree = "<group>"; };
+		E73F066F1CA0A22D00E25650 /* gl_includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl_includes.h; sourceTree = "<group>"; };
+		E73F06701CA0A22D00E25650 /* memtransfer_ios.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memtransfer_ios.cpp; sourceTree = "<group>"; };
+		E73F06711CA0A22D00E25650 /* memtransfer_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memtransfer_ios.h; sourceTree = "<group>"; };
+		E73F06721CA0A22D00E25650 /* sugar.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sugar.cmake; sourceTree = "<group>"; };
+		E73F06741CA0A22D00E25650 /* gl_includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl_includes.h; sourceTree = "<group>"; };
+		E73F06751CA0A22D00E25650 /* memtransfer_generic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memtransfer_generic.h; sourceTree = "<group>"; };
+		E73F06761CA0A22D00E25650 /* sugar.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sugar.cmake; sourceTree = "<group>"; };
+		E73F067C1CA0A22D00E25650 /* sugar.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sugar.cmake; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +275,9 @@
 		2802C4A31ACFF09B00E77EA8 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				2802C4A41ACFF0DE00E77EA8 /* common */,
+				E73F05FE1CA0A22D00E25650 /* common */,
+				E73F06641CA0A22D00E25650 /* platform */,
 				2802C4A61ACFF0F300E77EA8 /* ogles_gpgpu.h */,
-				2802C4A51ACFF0E900E77EA8 /* platform */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -121,6 +321,176 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E73F05FE1CA0A22D00E25650 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E73F05FF1CA0A22D00E25650 /* common_includes.h */,
+				E73F06001CA0A22D00E25650 /* core.cpp */,
+				E73F06011CA0A22D00E25650 /* core.h */,
+				E73F06021CA0A22D00E25650 /* gl */,
+				E73F060D1CA0A22D00E25650 /* macros.h */,
+				E73F060E1CA0A22D00E25650 /* proc */,
+				E73F065F1CA0A22D00E25650 /* sugar.cmake */,
+				E73F06601CA0A22D00E25650 /* tools.cpp */,
+				E73F06611CA0A22D00E25650 /* tools.h */,
+				E73F06621CA0A22D00E25650 /* types.cpp */,
+				E73F06631CA0A22D00E25650 /* types.h */,
+			);
+			name = common;
+			path = ../ogles_gpgpu/common;
+			sourceTree = "<group>";
+		};
+		E73F06021CA0A22D00E25650 /* gl */ = {
+			isa = PBXGroup;
+			children = (
+				E73F06031CA0A22D00E25650 /* fbo.cpp */,
+				E73F06041CA0A22D00E25650 /* fbo.h */,
+				E73F06051CA0A22D00E25650 /* memtransfer.cpp */,
+				E73F06061CA0A22D00E25650 /* memtransfer.h */,
+				E73F06071CA0A22D00E25650 /* memtransfer_factory.cpp */,
+				E73F06081CA0A22D00E25650 /* memtransfer_factory.h */,
+				E73F06091CA0A22D00E25650 /* memtransfer_optimized.h */,
+				E73F060A1CA0A22D00E25650 /* shader.cpp */,
+				E73F060B1CA0A22D00E25650 /* shader.h */,
+				E73F060C1CA0A22D00E25650 /* sugar.cmake */,
+			);
+			path = gl;
+			sourceTree = "<group>";
+		};
+		E73F060E1CA0A22D00E25650 /* proc */ = {
+			isa = PBXGroup;
+			children = (
+				E73F060F1CA0A22D00E25650 /* adapt_thresh.h */,
+				E73F06101CA0A22D00E25650 /* base */,
+				E73F061C1CA0A22D00E25650 /* blend.cpp */,
+				E73F061D1CA0A22D00E25650 /* blend.h */,
+				E73F061E1CA0A22D00E25650 /* box_opt.h */,
+				E73F061F1CA0A22D00E25650 /* diff.cpp */,
+				E73F06201CA0A22D00E25650 /* diff.h */,
+				E73F06211CA0A22D00E25650 /* disp.cpp */,
+				E73F06221CA0A22D00E25650 /* disp.h */,
+				E73F06231CA0A22D00E25650 /* fifo.cpp */,
+				E73F06241CA0A22D00E25650 /* fifo.h */,
+				E73F06251CA0A22D00E25650 /* filter3x3.cpp */,
+				E73F06261CA0A22D00E25650 /* filter3x3.h */,
+				E73F06271CA0A22D00E25650 /* fir3.cpp */,
+				E73F06281CA0A22D00E25650 /* fir3.h */,
+				E73F06291CA0A22D00E25650 /* flow.cpp */,
+				E73F062A1CA0A22D00E25650 /* flow.h */,
+				E73F062B1CA0A22D00E25650 /* gauss.h */,
+				E73F062C1CA0A22D00E25650 /* gauss_opt.h */,
+				E73F062D1CA0A22D00E25650 /* grad.cpp */,
+				E73F062E1CA0A22D00E25650 /* grad.h */,
+				E73F062F1CA0A22D00E25650 /* grayscale.cpp */,
+				E73F06301CA0A22D00E25650 /* grayscale.h */,
+				E73F06311CA0A22D00E25650 /* highpass.h */,
+				E73F06321CA0A22D00E25650 /* iir.cpp */,
+				E73F06331CA0A22D00E25650 /* iir.h */,
+				E73F06341CA0A22D00E25650 /* ixyt.cpp */,
+				E73F06351CA0A22D00E25650 /* ixyt.h */,
+				E73F06361CA0A22D00E25650 /* lbp.cpp */,
+				E73F06371CA0A22D00E25650 /* lbp.h */,
+				E73F06381CA0A22D00E25650 /* lnorm.h */,
+				E73F06391CA0A22D00E25650 /* lowpass.h */,
+				E73F063A1CA0A22D00E25650 /* median.cpp */,
+				E73F063B1CA0A22D00E25650 /* median.h */,
+				E73F063C1CA0A22D00E25650 /* multipass */,
+				E73F06481CA0A22D00E25650 /* nms.cpp */,
+				E73F06491CA0A22D00E25650 /* nms.h */,
+				E73F064A1CA0A22D00E25650 /* pyramid.cpp */,
+				E73F064B1CA0A22D00E25650 /* pyramid.h */,
+				E73F064C1CA0A22D00E25650 /* remap.cpp */,
+				E73F064D1CA0A22D00E25650 /* remap.h */,
+				E73F064E1CA0A22D00E25650 /* shitomasi.cpp */,
+				E73F064F1CA0A22D00E25650 /* shitomasi.h */,
+				E73F06501CA0A22D00E25650 /* sugar.cmake */,
+				E73F06511CA0A22D00E25650 /* tensor.cpp */,
+				E73F06521CA0A22D00E25650 /* tensor.h */,
+				E73F06531CA0A22D00E25650 /* three.cpp */,
+				E73F06541CA0A22D00E25650 /* three.h */,
+				E73F06551CA0A22D00E25650 /* thresh.cpp */,
+				E73F06561CA0A22D00E25650 /* thresh.h */,
+				E73F06571CA0A22D00E25650 /* transform.cpp */,
+				E73F06581CA0A22D00E25650 /* transform.h */,
+				E73F06591CA0A22D00E25650 /* two.cpp */,
+				E73F065A1CA0A22D00E25650 /* two.h */,
+				E73F065B1CA0A22D00E25650 /* video.cpp */,
+				E73F065C1CA0A22D00E25650 /* video.h */,
+				E73F065D1CA0A22D00E25650 /* yuv2rgb.cpp */,
+				E73F065E1CA0A22D00E25650 /* yuv2rgb.h */,
+			);
+			path = proc;
+			sourceTree = "<group>";
+		};
+		E73F06101CA0A22D00E25650 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				E73F06111CA0A22D00E25650 /* filterprocbase.cpp */,
+				E73F06121CA0A22D00E25650 /* filterprocbase.h */,
+				E73F06131CA0A22D00E25650 /* multipassproc.cpp */,
+				E73F06141CA0A22D00E25650 /* multipassproc.h */,
+				E73F06151CA0A22D00E25650 /* multiprocinterface.cpp */,
+				E73F06161CA0A22D00E25650 /* multiprocinterface.h */,
+				E73F06171CA0A22D00E25650 /* procbase.cpp */,
+				E73F06181CA0A22D00E25650 /* procbase.h */,
+				E73F06191CA0A22D00E25650 /* procinterface.cpp */,
+				E73F061A1CA0A22D00E25650 /* procinterface.h */,
+				E73F061B1CA0A22D00E25650 /* sugar.cmake */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		E73F063C1CA0A22D00E25650 /* multipass */ = {
+			isa = PBXGroup;
+			children = (
+				E73F063D1CA0A22D00E25650 /* adapt_thresh_pass.cpp */,
+				E73F063E1CA0A22D00E25650 /* adapt_thresh_pass.h */,
+				E73F063F1CA0A22D00E25650 /* box_opt_pass.cpp */,
+				E73F06401CA0A22D00E25650 /* box_opt_pass.h */,
+				E73F06411CA0A22D00E25650 /* gauss_opt_pass.cpp */,
+				E73F06421CA0A22D00E25650 /* gauss_opt_pass.h */,
+				E73F06431CA0A22D00E25650 /* gauss_pass.cpp */,
+				E73F06441CA0A22D00E25650 /* gauss_pass.h */,
+				E73F06451CA0A22D00E25650 /* local_norm_pass.cpp */,
+				E73F06461CA0A22D00E25650 /* local_norm_pass.h */,
+				E73F06471CA0A22D00E25650 /* sugar.cmake */,
+			);
+			path = multipass;
+			sourceTree = "<group>";
+		};
+		E73F06641CA0A22D00E25650 /* platform */ = {
+			isa = PBXGroup;
+			children = (
+				E73F066D1CA0A22D00E25650 /* ios */,
+				E73F06731CA0A22D00E25650 /* opengl */,
+				E73F067C1CA0A22D00E25650 /* sugar.cmake */,
+			);
+			name = platform;
+			path = ../ogles_gpgpu/platform;
+			sourceTree = "<group>";
+		};
+		E73F066D1CA0A22D00E25650 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				E73F066E1CA0A22D00E25650 /* core.mm */,
+				E73F066F1CA0A22D00E25650 /* gl_includes.h */,
+				E73F06701CA0A22D00E25650 /* memtransfer_ios.cpp */,
+				E73F06711CA0A22D00E25650 /* memtransfer_ios.h */,
+				E73F06721CA0A22D00E25650 /* sugar.cmake */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		E73F06731CA0A22D00E25650 /* opengl */ = {
+			isa = PBXGroup;
+			children = (
+				E73F06741CA0A22D00E25650 /* gl_includes.h */,
+				E73F06751CA0A22D00E25650 /* memtransfer_generic.h */,
+				E73F06761CA0A22D00E25650 /* sugar.cmake */,
+			);
+			path = opengl;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -128,9 +498,62 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2802C4C71ACFF20800E77EA8 /* common in Headers */,
+				E73F06A71CA0A22E00E25650 /* grad.h in Headers */,
+				E73F06A41CA0A22E00E25650 /* gauss.h in Headers */,
+				E73F069D1CA0A22E00E25650 /* fifo.h in Headers */,
+				E73F06901CA0A22E00E25650 /* multiprocinterface.h in Headers */,
+				E73F06B61CA0A22E00E25650 /* adapt_thresh_pass.h in Headers */,
+				E73F06BE1CA0A22E00E25650 /* local_norm_pass.h in Headers */,
+				E73F06E01CA0A22E00E25650 /* gl_includes.h in Headers */,
+				E73F06E31CA0A22E00E25650 /* gl_includes.h in Headers */,
+				E73F06A11CA0A22E00E25650 /* fir3.h in Headers */,
+				E73F06B11CA0A22E00E25650 /* lnorm.h in Headers */,
+				E73F06AC1CA0A22E00E25650 /* iir.h in Headers */,
+				E73F06C01CA0A22E00E25650 /* nms.h in Headers */,
+				E73F06E21CA0A22E00E25650 /* memtransfer_ios.h in Headers */,
+				E73F068C1CA0A22E00E25650 /* filterprocbase.h in Headers */,
+				E73F06CE1CA0A22E00E25650 /* transform.h in Headers */,
+				E73F06961CA0A22E00E25650 /* blend.h in Headers */,
+				E73F06C41CA0A22E00E25650 /* remap.h in Headers */,
+				E73F06C81CA0A22E00E25650 /* tensor.h in Headers */,
+				E73F069F1CA0A22E00E25650 /* filter3x3.h in Headers */,
+				E73F06D41CA0A22E00E25650 /* yuv2rgb.h in Headers */,
+				E73F06A91CA0A22E00E25650 /* grayscale.h in Headers */,
+				E73F06AE1CA0A22E00E25650 /* ixyt.h in Headers */,
+				E73F06941CA0A22E00E25650 /* procinterface.h in Headers */,
+				E73F067F1CA0A22D00E25650 /* core.h in Headers */,
+				E73F06AA1CA0A22E00E25650 /* highpass.h in Headers */,
+				E73F06D01CA0A22E00E25650 /* two.h in Headers */,
+				E73F06C61CA0A22E00E25650 /* shitomasi.h in Headers */,
+				E73F06D61CA0A22E00E25650 /* tools.h in Headers */,
+				E73F06CA1CA0A22E00E25650 /* three.h in Headers */,
+				E73F06A31CA0A22E00E25650 /* flow.h in Headers */,
+				E73F06B21CA0A22E00E25650 /* lowpass.h in Headers */,
+				E73F067D1CA0A22D00E25650 /* common_includes.h in Headers */,
+				E73F06E41CA0A22E00E25650 /* memtransfer_generic.h in Headers */,
+				E73F06C21CA0A22E00E25650 /* pyramid.h in Headers */,
+				E73F06CC1CA0A22E00E25650 /* thresh.h in Headers */,
+				E73F06851CA0A22E00E25650 /* memtransfer_factory.h in Headers */,
+				E73F06811CA0A22E00E25650 /* fbo.h in Headers */,
+				E73F06861CA0A22E00E25650 /* memtransfer_optimized.h in Headers */,
+				E73F06991CA0A22E00E25650 /* diff.h in Headers */,
+				E73F068A1CA0A22E00E25650 /* adapt_thresh.h in Headers */,
+				E73F06B01CA0A22E00E25650 /* lbp.h in Headers */,
+				E73F06B81CA0A22E00E25650 /* box_opt_pass.h in Headers */,
+				E73F06A51CA0A22E00E25650 /* gauss_opt.h in Headers */,
+				E73F06891CA0A22E00E25650 /* macros.h in Headers */,
+				E73F06921CA0A22E00E25650 /* procbase.h in Headers */,
+				E73F06881CA0A22E00E25650 /* shader.h in Headers */,
+				E73F06971CA0A22E00E25650 /* box_opt.h in Headers */,
 				2802C4C81ACFF20E00E77EA8 /* ogles_gpgpu.h in Headers */,
-				2802C4C91ACFF21000E77EA8 /* platform in Headers */,
+				E73F06B41CA0A22E00E25650 /* median.h in Headers */,
+				E73F06831CA0A22E00E25650 /* memtransfer.h in Headers */,
+				E73F06D81CA0A22E00E25650 /* types.h in Headers */,
+				E73F069B1CA0A22E00E25650 /* disp.h in Headers */,
+				E73F06D21CA0A22E00E25650 /* video.h in Headers */,
+				E73F06BC1CA0A22E00E25650 /* gauss_pass.h in Headers */,
+				E73F06BA1CA0A22E00E25650 /* gauss_opt_pass.h in Headers */,
+				E73F068E1CA0A22E00E25650 /* multipassproc.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,20 +631,63 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E73F06BB1CA0A22E00E25650 /* gauss_pass.cpp in Sources */,
 				2802C4A81ACFF14100E77EA8 /* core.cpp in Sources */,
 				2802C4AA1ACFF14800E77EA8 /* fbo.cpp in Sources */,
+				E73F06981CA0A22E00E25650 /* diff.cpp in Sources */,
+				E73F067E1CA0A22D00E25650 /* core.cpp in Sources */,
+				E73F069E1CA0A22E00E25650 /* filter3x3.cpp in Sources */,
+				E73F06C11CA0A22E00E25650 /* pyramid.cpp in Sources */,
+				E73F06C31CA0A22E00E25650 /* remap.cpp in Sources */,
 				2802C4AE1ACFF15000E77EA8 /* memtransfer.cpp in Sources */,
+				E73F06CB1CA0A22E00E25650 /* thresh.cpp in Sources */,
+				E73F069A1CA0A22E00E25650 /* disp.cpp in Sources */,
 				2802C4AC1ACFF14B00E77EA8 /* memtransfer_factory.cpp in Sources */,
+				E73F06951CA0A22E00E25650 /* blend.cpp in Sources */,
 				2802C4B01ACFF15500E77EA8 /* shader.cpp in Sources */,
+				E73F06B71CA0A22E00E25650 /* box_opt_pass.cpp in Sources */,
+				E73F06D71CA0A22E00E25650 /* types.cpp in Sources */,
+				E73F06A01CA0A22E00E25650 /* fir3.cpp in Sources */,
+				E73F06AD1CA0A22E00E25650 /* ixyt.cpp in Sources */,
+				E73F06821CA0A22E00E25650 /* memtransfer.cpp in Sources */,
+				E73F06BD1CA0A22E00E25650 /* local_norm_pass.cpp in Sources */,
+				E73F06931CA0A22E00E25650 /* procinterface.cpp in Sources */,
 				2802C4B21ACFF16400E77EA8 /* filterprocbase.cpp in Sources */,
+				E73F06C91CA0A22E00E25650 /* three.cpp in Sources */,
+				E73F06B31CA0A22E00E25650 /* median.cpp in Sources */,
+				E73F068B1CA0A22E00E25650 /* filterprocbase.cpp in Sources */,
 				2802C4B41ACFF16900E77EA8 /* multipassproc.cpp in Sources */,
 				2802C4B61ACFF16E00E77EA8 /* procbase.cpp in Sources */,
+				E73F06A21CA0A22E00E25650 /* flow.cpp in Sources */,
+				E73F06871CA0A22E00E25650 /* shader.cpp in Sources */,
+				E73F06B91CA0A22E00E25650 /* gauss_opt_pass.cpp in Sources */,
+				E73F06D51CA0A22E00E25650 /* tools.cpp in Sources */,
+				E73F06DF1CA0A22E00E25650 /* core.mm in Sources */,
 				2802C4B81ACFF17300E77EA8 /* disp.cpp in Sources */,
+				E73F068F1CA0A22E00E25650 /* multiprocinterface.cpp in Sources */,
+				E73F06841CA0A22E00E25650 /* memtransfer_factory.cpp in Sources */,
+				E73F06801CA0A22E00E25650 /* fbo.cpp in Sources */,
 				2802C4BA1ACFF17A00E77EA8 /* grayscale.cpp in Sources */,
+				E73F06E11CA0A22E00E25650 /* memtransfer_ios.cpp in Sources */,
+				E73F06BF1CA0A22E00E25650 /* nms.cpp in Sources */,
 				2802C4BC1ACFF18500E77EA8 /* adapt_thresh_pass.cpp in Sources */,
+				E73F06AF1CA0A22E00E25650 /* lbp.cpp in Sources */,
 				2802C4BE1ACFF18A00E77EA8 /* gauss_pass.cpp in Sources */,
+				E73F06AB1CA0A22E00E25650 /* iir.cpp in Sources */,
+				E73F06A61CA0A22E00E25650 /* grad.cpp in Sources */,
+				E73F06C71CA0A22E00E25650 /* tensor.cpp in Sources */,
+				E73F06CD1CA0A22E00E25650 /* transform.cpp in Sources */,
+				E73F06A81CA0A22E00E25650 /* grayscale.cpp in Sources */,
+				E73F068D1CA0A22E00E25650 /* multipassproc.cpp in Sources */,
+				E73F06B51CA0A22E00E25650 /* adapt_thresh_pass.cpp in Sources */,
+				E73F06911CA0A22E00E25650 /* procbase.cpp in Sources */,
 				2802C4C01ACFF18F00E77EA8 /* thresh.cpp in Sources */,
+				E73F069C1CA0A22E00E25650 /* fifo.cpp in Sources */,
 				2802C4C21ACFF19900E77EA8 /* tools.cpp in Sources */,
+				E73F06D31CA0A22E00E25650 /* yuv2rgb.cpp in Sources */,
+				E73F06C51CA0A22E00E25650 /* shitomasi.cpp in Sources */,
+				E73F06D11CA0A22E00E25650 /* video.cpp in Sources */,
+				E73F06CF1CA0A22E00E25650 /* two.cpp in Sources */,
 				2802C4C41ACFF1B500E77EA8 /* memtransfer_ios.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +734,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -303,13 +770,18 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
 		28CDEBC51ACFF02000AF000D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../ogles_gpgpu/platform";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../ogles_gpgpu/platform",
+					"$(PROJECT_DIR)/../ogles_gpgpu/common",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -319,7 +791,11 @@
 		28CDEBC61ACFF02000AF000D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../ogles_gpgpu/platform";
+				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../ogles_gpgpu/platform",
+					"$(PROJECT_DIR)/../ogles_gpgpu/common",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
