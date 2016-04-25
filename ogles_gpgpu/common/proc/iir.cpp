@@ -52,22 +52,36 @@ IirFilterProc::IirFilterProc(FilterKind kind, float alpha, float strength)
     }
 }
 
+int IirFilterProc::init(int inW, int inH, unsigned int order, bool prepareForExternalInput)
+{
+    isFirst = true;
+    return MultiPassProc::init(inW, inH, order, prepareForExternalInput);
+}
+
+int IirFilterProc::reinit(int inW, int inH, bool prepareForExternalInput)
+{
+    isFirst = true;
+    return MultiPassProc::reinit(inW, inH, prepareForExternalInput);
+}
+
 IirFilterProc::~IirFilterProc() {}
 ProcInterface* IirFilterProc::getInputFilter() const { return &m_impl->iirProc; }
 ProcInterface* IirFilterProc::getOutputFilter() const { return m_impl->lastProc; }
 
 int IirFilterProc::render(int position)
 {   // Execute internal filter chain
+    
+    // calls next->useTexture(); next->process();
+    // TODO: We don't really need this to call fifoProc->useTexture(),
+    // if it is done by this class (see below for special case first frame handling)
     m_impl->iirProc.process(0);
     if(m_impl->kind == kHighPass)
     {
+        // At this point useTexture() has been called and diffProc should have:
+        // texture #1 : <- Input
+        // texture #2 : <- IirProc
         m_impl->diffProc.process(0);
     }
-    
-    // Connect FIFO output to second input of IIR for frames >= 1
-    auto &fifoProc = m_impl->fifoProc;
-    auto &iirProc = m_impl->iirProc;
-    iirProc.useTexture2(fifoProc.getOutputTexId(), fifoProc.getTextureUnit(), GL_TEXTURE_2D);
     return 0;
 }
 
@@ -82,15 +96,37 @@ void IirFilterProc::useTexture(GLuint id, GLuint useTexUnit, GLenum target, int 
         
         // (Optional) Diff filter for high pass filter:
         diffProc.useTexture(id, useTexUnit, target, 0);
-        diffProc.useTexture2(iirProc.getOutputTexId(), iirProc.getTextureUnit(), GL_TEXTURE_2D);
+        if(isFirst)
+        {
+            diffProc.useTexture2(id, useTexUnit, GL_TEXTURE_2D);
+        }
+        else
+        {
+            diffProc.useTexture2(iirProc.getOutputTexId(), iirProc.getTextureUnit(), GL_TEXTURE_2D);
+        }
     }
-
-    // IIR filter input (same image for first frame)
-    iirProc.useTexture(id, useTexUnit, target, 0);
-    iirProc.useTexture2(id, useTexUnit, GL_TEXTURE_2D);
     
-    // FIFO input (from IIR)
-    fifoProc.useTexture(iirProc.getOutputTexId(), iirProc.getTextureUnit(), GL_TEXTURE_2D, 0);
+    // IIR filter input (same image for first frame)
+
+    if(isFirst)
+    {
+        isFirst = false;
+        iirProc.useTexture(id, useTexUnit, target, 0);
+        iirProc.useTexture2(id, useTexUnit, GL_TEXTURE_2D);
+        
+        // FIFO input (from IIR)
+        fifoProc.useTexture(id, useTexUnit, target, 0);
+    }
+    else
+    {
+        // Connect FIFO output to second input of IIR for frames >= 1
+        iirProc.useTexture(id, useTexUnit, target, 0);
+        iirProc.useTexture2(fifoProc.getOutputTexId(), fifoProc.getTextureUnit(), GL_TEXTURE_2D);
+        
+        // FIFO input (from IIR)
+        fifoProc.useTexture(iirProc.getOutputTexId(), iirProc.getTextureUnit(), GL_TEXTURE_2D, 0);
+
+    }
 }
 
 END_OGLES_GPGPU
