@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C3339A4E47BD5CBC797FF900B8CB1DC8A0F9DDF0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C63A7DEC906A860947A3A3979E81CD80C1918933" : 0,
+    "C3339A4E47BD5CBC797FF900B8CB1DC8A0F9DDF0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DF1D49B0-2AC8-4931-8E26-010CE749BC8D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C63A7DEC906A860947A3A3979E81CD80C1918933" : "..",
+    "C3339A4E47BD5CBC797FF900B8CB1DC8A0F9DDF0" : "ogles_gpgpu"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "OGLESGPGPUVideoCam",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "examples\/ios\/OGLESGPGPUVideoCam\/OGLESGPGPUVideoCam.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:internaut\/ogles_gpgpu.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C3339A4E47BD5CBC797FF900B8CB1DC8A0F9DDF0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/CambrianTech\/common-core.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C63A7DEC906A860947A3A3979E81CD80C1918933"
+    }
+  ]
+}
