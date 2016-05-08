@@ -16,24 +16,55 @@ LOCAL_C_INCLUDES += $(OG_SRC_PATH)
 #LOCAL_CFLAGS    += -DDEBUG
 #LOCAL_CFLAGS    += -DOGLES_GPGPU_BENCHMARK
 
+INC := -I$(OG_SRC_PATH)/../ -I$(OG_SRC_PATH) -I$(OG_SRC_PATH)/platform \
+-I$(OG_SRC_PATH)/common
+
+LOCAL_CPPFLAGS += $(INC)
+
 # Specify the source files
 LOCAL_SRC_FILES := \
         og_jni_wrapper.cpp \
         og_pipeline.cpp \
         $(OG_SRC_PATH)/common/core.cpp \
         $(OG_SRC_PATH)/common/tools.cpp \
+        $(OG_SRC_PATH)/common/types.cpp \
         $(OG_SRC_PATH)/common/gl/fbo.cpp \
         $(OG_SRC_PATH)/common/gl/memtransfer.cpp \
         $(OG_SRC_PATH)/common/gl/memtransfer_factory.cpp \
         $(OG_SRC_PATH)/common/gl/shader.cpp \
+        $(OG_SRC_PATH)/common/proc/blend.cpp \
+        $(OG_SRC_PATH)/common/proc/diff.cpp \
         $(OG_SRC_PATH)/common/proc/disp.cpp \
+        $(OG_SRC_PATH)/common/proc/fifo.cpp \
+        $(OG_SRC_PATH)/common/proc/filter3x3.cpp \
+        $(OG_SRC_PATH)/common/proc/fir3.cpp \
+        $(OG_SRC_PATH)/common/proc/flow.cpp \
+        $(OG_SRC_PATH)/common/proc/grad.cpp \
         $(OG_SRC_PATH)/common/proc/grayscale.cpp \
+        $(OG_SRC_PATH)/common/proc/iir.cpp \
+        $(OG_SRC_PATH)/common/proc/ixyt.cpp \
+        $(OG_SRC_PATH)/common/proc/lbp.cpp \
+        $(OG_SRC_PATH)/common/proc/median.cpp \
+        $(OG_SRC_PATH)/common/proc/nms.cpp \
+        $(OG_SRC_PATH)/common/proc/pyramid.cpp \
+        $(OG_SRC_PATH)/common/proc/remap.cpp \
+        $(OG_SRC_PATH)/common/proc/shitomasi.cpp \
+        $(OG_SRC_PATH)/common/proc/tensor.cpp \
+        $(OG_SRC_PATH)/common/proc/three.cpp \
         $(OG_SRC_PATH)/common/proc/thresh.cpp \
+        $(OG_SRC_PATH)/common/proc/transform.cpp \
+        $(OG_SRC_PATH)/common/proc/two.cpp \
+        $(OG_SRC_PATH)/common/proc/video.cpp \
+        $(OG_SRC_PATH)/common/proc/yuv2rgb.cpp \
         $(OG_SRC_PATH)/common/proc/base/filterprocbase.cpp \
         $(OG_SRC_PATH)/common/proc/base/multipassproc.cpp \
         $(OG_SRC_PATH)/common/proc/base/procbase.cpp \
+        $(OG_SRC_PATH)/common/proc/base/procinterface.cpp \
         $(OG_SRC_PATH)/common/proc/multipass/adapt_thresh_pass.cpp \
+        $(OG_SRC_PATH)/common/proc/multipass/box_opt_pass.cpp \
+        $(OG_SRC_PATH)/common/proc/multipass/gauss_opt_pass.cpp \
         $(OG_SRC_PATH)/common/proc/multipass/gauss_pass.cpp \
+        $(OG_SRC_PATH)/common/proc/multipass/local_norm_pass.cpp \
         $(OG_SRC_PATH)/platform/android/egl.cpp \
         $(OG_SRC_PATH)/platform/android/memtransfer_android.cpp
 

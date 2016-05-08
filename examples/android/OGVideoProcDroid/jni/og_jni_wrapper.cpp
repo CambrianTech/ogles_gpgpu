@@ -254,7 +254,7 @@ JNIEXPORT void JNICALL Java_ogles_1gpgpu_OGJNIWrapper_process(JNIEnv *env, jobje
 JNIEXPORT void JNICALL Java_ogles_1gpgpu_OGJNIWrapper_renderOutput(JNIEnv *, jobject) {
     assert(ogInitialized && ogDisp);
 
-    ogDisp->render();
+    ogDisp->render(0);
 }
 
 
