@@ -16,8 +16,12 @@ LOCAL_C_INCLUDES += $(OG_SRC_PATH)
 #LOCAL_CFLAGS    += -DDEBUG
 #LOCAL_CFLAGS    += -DOGLES_GPGPU_BENCHMARK
 
-INC := -I$(OG_SRC_PATH)/../ -I$(OG_SRC_PATH) -I$(OG_SRC_PATH)/platform \
--I$(OG_SRC_PATH)/common
+INC := \
+-I$(OG_SRC_PATH)/../ \
+-I$(OG_SRC_PATH) \
+-I$(OG_SRC_PATH)/platform \
+-I$(OG_SRC_PATH)/platform\android \
+-I$(OG_SRC_PATH)/common \
 
 LOCAL_CPPFLAGS += $(INC)
 
