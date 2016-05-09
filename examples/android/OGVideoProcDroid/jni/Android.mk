@@ -19,9 +19,9 @@ LOCAL_C_INCLUDES += $(OG_SRC_PATH)
 INC := \
 -I$(OG_SRC_PATH)/../ \
 -I$(OG_SRC_PATH) \
+-I$(OG_SRC_PATH)/common \
 -I$(OG_SRC_PATH)/platform \
 -I$(OG_SRC_PATH)/platform\android \
--I$(OG_SRC_PATH)/common \
 
 LOCAL_CPPFLAGS += $(INC)
 
