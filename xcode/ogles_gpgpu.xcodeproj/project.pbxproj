@@ -467,7 +467,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PUBLIC_HEADERS_FOLDER_PATH = "include/${PRODUCT_NAME}";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "arm64 armv7";
@@ -516,6 +516,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../ogles_gpgpu/platform",
 					"$(PROJECT_DIR)/../ogles_gpgpu/common",
+					"$(PROJECT_DIR)/../ogles_gpgpu",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
@@ -530,6 +531,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../ogles_gpgpu/platform",
 					"$(PROJECT_DIR)/../ogles_gpgpu/common",
+					"$(PROJECT_DIR)/../ogles_gpgpu",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "-ObjC";
