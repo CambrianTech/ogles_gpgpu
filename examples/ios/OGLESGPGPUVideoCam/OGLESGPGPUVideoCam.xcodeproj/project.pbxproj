@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2802C4D81ACFF3CE00E77EA8 /* libogles_gpgpu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2802C4D71ACFF3A800E77EA8 /* libogles_gpgpu.a */; };
 		28193A461A2488D60055834F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28193A451A2488D60055834F /* CoreVideo.framework */; };
 		28193A481A2488DB0055834F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28193A471A2488DB0055834F /* OpenGLES.framework */; };
 		28193A4A1A2488E00055834F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28193A491A2488E00055834F /* GLKit.framework */; };
@@ -21,7 +22,6 @@
 		28579B191A23C06100B1710F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28579B181A23C06100B1710F /* Images.xcassets */; };
 		28579B371A23C0EC00B1710F /* CamView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28579B361A23C0EC00B1710F /* CamView.mm */; };
 		28579B3A1A23C24600B1710F /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28579B391A23C24600B1710F /* RootViewController.mm */; };
-		E73F05FD1CA09F9800E25650 /* libogles_gpgpu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2802C4D71ACFF3A800E77EA8 /* libogles_gpgpu.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73F05FD1CA09F9800E25650 /* libogles_gpgpu.a in Frameworks */,
+				2802C4D81ACFF3CE00E77EA8 /* libogles_gpgpu.a in Frameworks */,
 				28193A4E1A2489EB0055834F /* CoreMedia.framework in Frameworks */,
 				28193A4C1A2489DA0055834F /* AVFoundation.framework in Frameworks */,
 				28193A4A1A2488E00055834F /* GLKit.framework in Frameworks */,
@@ -185,7 +185,7 @@
 				ORGANIZATIONNAME = mkonrad.net;
 				TargetAttributes = {
 					28579B021A23C06000B1710F = {
-						DevelopmentTeam = 487F34SCQ8;
+						DevelopmentTeam = VY9LB8SQF2;
 					};
 				};
 			};
@@ -292,11 +292,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
-				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -326,11 +325,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};

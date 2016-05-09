@@ -1,2 +1,0 @@
-#add_subdirectory(OGLESGPGPUStillImage)
-add_subdirectory(OGLESGPGPUVideoCam)
