@@ -44,6 +44,12 @@ const GLfloat ProcBase::quadTexCoordsDiagonal[] = {
     1, 0,
     1, 1 };
 
+const GLfloat ProcBase::quadTexCoordsDiagonalFlipped[] = {
+    1.0f, 1.0f,
+    1.0f, 0.0f,
+    0.0f, 1.0f,
+    0.0f, 0.0f };
+
 const GLfloat ProcBase::quadVertices[] = {
     -1, -1, 0,
      1, -1, 0,

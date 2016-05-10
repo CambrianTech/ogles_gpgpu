@@ -91,6 +91,8 @@ void FilterProcBase::initTexCoordBuf(RenderOrientation overrideRenderOrientation
             break;
         case RenderOrientationDiagonal:
             coordsPtr = ProcBase::quadTexCoordsDiagonal;
+        case RenderOrientationDiagonalFlipped:
+            coordsPtr = ProcBase::quadTexCoordsDiagonalFlipped;
             break;
     }
     
