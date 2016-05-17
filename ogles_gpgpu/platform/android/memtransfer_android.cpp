@@ -124,7 +124,9 @@ void MemTransferAndroid::releaseInput() {
     if (inputImage) {
     	OG_LOGINF("MemTransferAndroid", "releasing input image");
         imageKHRDestroy(EGL_DEFAULT_DISPLAY, inputImage);
-		//free(inputImage);
+        //following example code from mozilla to comment out free:
+        //https://github.com/mozilla-services/services-central-legacy/blob/master/widget/android/AndroidGraphicBuffer.cpp
+		//free(inputImage); //causes crash on back, cleared by surface destroy anyway
 		inputImage = NULL;
     }
     
@@ -132,7 +134,7 @@ void MemTransferAndroid::releaseInput() {
 	if (inputGraBufHndl) {
     	OG_LOGINF("MemTransferAndroid", "releasing graphic buffer handle for input");
 		graBufDestroy(inputGraBufHndl);
-		//free(inputGraBufHndl);
+		free(inputGraBufHndl);
         
 		inputGraBufHndl = NULL;
         inputNativeBuf = NULL;  // reset weak-ref pointer to NULL
@@ -144,7 +146,7 @@ void MemTransferAndroid::releaseOutput() {
     if (outputImage) {
     	OG_LOGINF("MemTransferAndroid", "releasing output image");
         imageKHRDestroy(EGL_DEFAULT_DISPLAY, outputImage);
-		//free(outputImage);
+		//free(outputImage); //causes crash on back, cleared by surface destroy anyway
 		outputImage = NULL;
     }
     
@@ -152,7 +154,7 @@ void MemTransferAndroid::releaseOutput() {
 	if (outputGraBufHndl) {
     	OG_LOGINF("MemTransferAndroid", "releasing graphic buffer handle for output");
 		graBufDestroy(outputGraBufHndl);
-		//free(outputGraBufHndl);
+		free(outputGraBufHndl);
         
 		outputGraBufHndl = NULL;
         outputNativeBuf = NULL;  // reset weak-ref pointer to NULL
