@@ -16,6 +16,8 @@
 #include "../../platform/android/memtransfer_android.h"
 #endif
 
+
+
 using namespace ogles_gpgpu;
 
 bool MemTransferFactory::usePlatformOptimizations = false;
@@ -32,6 +34,7 @@ MemTransfer *MemTransferFactory::createInstance() {
     }
     
     if (!instance) {    // create default instance
+        
         instance = new MemTransfer();
     }
     

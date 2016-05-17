@@ -124,7 +124,7 @@ void MemTransferAndroid::releaseInput() {
     if (inputImage) {
     	OG_LOGINF("MemTransferAndroid", "releasing input image");
         imageKHRDestroy(EGL_DEFAULT_DISPLAY, inputImage);
-		free(inputImage);
+		//free(inputImage);
 		inputImage = NULL;
     }
     
@@ -132,7 +132,7 @@ void MemTransferAndroid::releaseInput() {
 	if (inputGraBufHndl) {
     	OG_LOGINF("MemTransferAndroid", "releasing graphic buffer handle for input");
 		graBufDestroy(inputGraBufHndl);
-		free(inputGraBufHndl);
+		//free(inputGraBufHndl);
         
 		inputGraBufHndl = NULL;
         inputNativeBuf = NULL;  // reset weak-ref pointer to NULL
@@ -144,7 +144,7 @@ void MemTransferAndroid::releaseOutput() {
     if (outputImage) {
     	OG_LOGINF("MemTransferAndroid", "releasing output image");
         imageKHRDestroy(EGL_DEFAULT_DISPLAY, outputImage);
-		free(outputImage);
+		//free(outputImage);
 		outputImage = NULL;
     }
     
@@ -152,7 +152,7 @@ void MemTransferAndroid::releaseOutput() {
 	if (outputGraBufHndl) {
     	OG_LOGINF("MemTransferAndroid", "releasing graphic buffer handle for output");
 		graBufDestroy(outputGraBufHndl);
-		free(outputGraBufHndl);
+		//free(outputGraBufHndl);
         
 		outputGraBufHndl = NULL;
         outputNativeBuf = NULL;  // reset weak-ref pointer to NULL
