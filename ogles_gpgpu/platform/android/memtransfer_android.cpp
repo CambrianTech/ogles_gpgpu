@@ -169,7 +169,7 @@ void MemTransferAndroid::releaseInput() {
     if (inputImage) {
         OG_LOGINF("MemTransferAndroid", "releasing input image");
         imageKHRDestroy(EGL_DEFAULT_DISPLAY, inputImage);
-        free(inputImage);
+        //free(inputImage);
         inputImage = NULL;
     }
 
@@ -189,7 +189,7 @@ void MemTransferAndroid::releaseOutput() {
     if (outputImage) {
         OG_LOGINF("MemTransferAndroid", "releasing output image");
         imageKHRDestroy(EGL_DEFAULT_DISPLAY, outputImage);
-        free(outputImage);
+        //free(outputImage);
         outputImage = NULL;
     }
 
