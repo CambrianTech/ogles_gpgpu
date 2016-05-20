@@ -168,8 +168,10 @@ void MemTransferAndroid::releaseInput() {
     // release input image
     if (inputImage) {
         OG_LOGINF("MemTransferAndroid", "releasing input image");
-        imageKHRDestroy(EGL_DEFAULT_DISPLAY, inputImage);
-        //free(inputImage);
+        if (imageKHRDestroy(EGL_DEFAULT_DISPLAY, inputImage)) {
+            free(inputImage);
+            OG_LOGINF("MemTransferAndroid", "FREE input image");
+        }
         inputImage = NULL;
     }
 
@@ -188,8 +190,11 @@ void MemTransferAndroid::releaseOutput() {
     // release output image
     if (outputImage) {
         OG_LOGINF("MemTransferAndroid", "releasing output image");
-        imageKHRDestroy(EGL_DEFAULT_DISPLAY, outputImage);
-        //free(outputImage);
+        if (imageKHRDestroy(EGL_DEFAULT_DISPLAY, outputImage)) {
+            free(inputImage);
+            OG_LOGINF("MemTransferAndroid", "FREE output image");
+        }
+        
         outputImage = NULL;
     }
 
@@ -213,64 +218,70 @@ void MemTransferAndroid::init() {
 
 GLuint MemTransferAndroid::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat, void *inputDataPtr) {
     assert(initialized && inTexW > 0 && inTexH > 0);
-
+    
     if (inputDataPtr == NULL && inputW == inTexW && inputH == inTexH && inputPixelFormat == inputPxFormat) {
         return inputTexId; // no change
     }
-
+    
     if (preparedInput) {    // already prepared -- release buffers!
         releaseInput();
     }
-
+    
     // set attributes
     inputW = inTexW;
     inputH = inTexH;
     inputPixelFormat = inputPxFormat;
-
+    
     // generate texture id for input
     glGenTextures(1, &inputTexId);
-
+    
     if (inputTexId <= 0) {
         OG_LOGERR("MemTransferAndroid", "error generating input texture id");
         return 0;
     }
-
+    
     // handle input pixel format
     int nativePxFmt = HAL_PIXEL_FORMAT_RGBA_8888;
     if (inputPixelFormat != GL_RGBA) {
         OG_LOGERR("MemTransferAndroid", "warning: only GL_RGBA is valid as input pixel format");
     }
-
+    
     // create graphic buffer
     inputGraBufHndl = malloc(OG_ANDROID_GRAPHIC_BUFFER_SIZE);
     graBufCreate(inputGraBufHndl, inputW, inputH, nativePxFmt,
                  GRALLOC_USAGE_HW_TEXTURE | GRALLOC_USAGE_SW_WRITE_OFTEN);  // is used as OpenGL texture and will be written often
-
+    
     // get window buffer
     inputNativeBuf = (struct ANativeWindowBuffer *)graBufGetNativeBuffer(inputGraBufHndl);
-
+    
     if (!inputNativeBuf) {
         OG_LOGERR("MemTransferAndroid", "error getting native window buffer for input");
+        return 0;
+    }
+    
+    EGLDisplay display;
+    if ((display = eglGetDisplay(EGL_DEFAULT_DISPLAY)) == EGL_NO_DISPLAY) {
+        OG_LOGERR("MemTransferAndroid", "Tex eglGetDisplay() returned error %d", eglGetError());
         return 0;
     }
 
     // create image for reading back the results
     EGLint eglImgAttrs[] = { EGL_IMAGE_PRESERVED_KHR, EGL_TRUE, EGL_NONE, EGL_NONE };
-    inputImage = imageKHRCreate(eglGetDisplay(EGL_DEFAULT_DISPLAY),
+    inputImage = imageKHRCreate(display,
                                 EGL_NO_CONTEXT,
                                 EGL_NATIVE_BUFFER_ANDROID,
                                 (EGLClientBuffer)inputNativeBuf,
                                 eglImgAttrs);	// or NULL as last param?
-
+    
     if (!inputImage) {
         OG_LOGERR("MemTransferAndroid", "error creating image KHR for input");
         return 0;
     }
-
+    
     preparedInput = true;
-
+    
     OG_LOGINF("MemTransferAndroid", "successfully prepared input with texture id %d", inputTexId);
-
+    
     return inputTexId;
 }
 
