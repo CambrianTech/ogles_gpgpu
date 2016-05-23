@@ -149,6 +149,9 @@ GLuint MemTransferIOS::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat
     if (inputPixelFormat == GL_BGRA) {
         bytesPerLine = inputW * 4;
         pxBufFmt = kCVPixelFormatType_32BGRA;
+    } else if (inputPixelFormat == GL_LUMINANCE || inputPixelFormat == GL_LUMINANCE_ALPHA) {
+        bytesPerLine = inputW;
+        pxBufFmt = kCVPixelFormatType_OneComponent8;
     } else if(inputPixelFormat == 0) {
         bytesPerLine = inputW;
         pxBufFmt = kCVPixelFormatType_420YpCbCr8BiPlanarFullRange;
@@ -244,7 +247,7 @@ GLuint MemTransferIOS::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat
 
     // create input texture
     if(inputDataPtr) {
-        if(inputPixelFormat == GL_BGRA) {
+        if(inputPixelFormat == GL_BGRA || inputPixelFormat == GL_LUMINANCE || inputPixelFormat == GL_LUMINANCE_ALPHA) {
             res = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
                                                                textureCache,
                                                                bufRef,
@@ -265,7 +268,7 @@ GLuint MemTransferIOS::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat
                 return 0;
             }
             
-            inputPixelBufferSize = inputW * inputH * 4; // always assume 4 channels of 8 bit data
+            inputPixelBufferSize = bytesPerLine * inputH; // always assume 4 channels of 8 bit data
             
             // get created texture id
             inputTexId = CVOpenGLESTextureGetName(texRef);
