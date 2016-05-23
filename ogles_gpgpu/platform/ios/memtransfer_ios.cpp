@@ -253,7 +253,7 @@ GLuint MemTransferIOS::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat
                                                                bufRef,
                                                                NULL, // texture attributes
                                                                GL_TEXTURE_2D,
-                                                               GL_RGBA, // opengl format
+                                                               inputPixelFormat == GL_BGRA ? GL_RGBA : inputPixelFormat, // opengl format
                                                                inputW,
                                                                inputH,
                                                                inputPixelFormat,
@@ -268,7 +268,7 @@ GLuint MemTransferIOS::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat
                 return 0;
             }
             
-            inputPixelBufferSize = bytesPerLine * inputH; // always assume 4 channels of 8 bit data
+            inputPixelBufferSize = bytesPerLine * inputH;
             
             // get created texture id
             inputTexId = CVOpenGLESTextureGetName(texRef);
