@@ -165,13 +165,29 @@ MemTransferAndroid::~MemTransferAndroid() {
 #pragma mark public methods
 
 void MemTransferAndroid::releaseInput() {
+    
+    //from mozilla team
+    //https://github.com/michaelrhanson/mozilla-central/blob/master/widget/android/AndroidGraphicBuffer.cpp
     // release input image
+    /**
+     * XXX: eglDestroyImageKHR crashes sometimes due to refcount badness (I think)
+     *
+     * If you look at egl.cpp (https://github.com/android/platform_frameworks_base/blob/master/opengl/libagl/egl.cpp#L2002)
+     * you can see that eglCreateImageKHR just refs the native buffer, and eglDestroyImageKHR
+     * just unrefs it. Somehow the ref count gets messed up and things are already destroyed
+     * by the time eglDestroyImageKHR gets called. For now, at least, just not calling
+     * eglDestroyImageKHR should be fine since we do free the GraphicBuffer below.
+     *
+     * Bug 712716
+     */
+
     if (inputImage) {
+#if 0
         OG_LOGINF("MemTransferAndroid", "releasing input image");
         if (imageKHRDestroy(EGL_DEFAULT_DISPLAY, inputImage)) {
             free(inputImage);
-            OG_LOGINF("MemTransferAndroid", "FREE input image");
         }
+#endif
         inputImage = NULL;
     }
 
@@ -187,14 +203,14 @@ void MemTransferAndroid::releaseInput() {
 }
 
 void MemTransferAndroid::releaseOutput() {
-    // release output image
+    // release output image, see release input above. free not technically necessary with graphics buffer free below
     if (outputImage) {
+#if 0
         OG_LOGINF("MemTransferAndroid", "releasing output image");
         if (imageKHRDestroy(EGL_DEFAULT_DISPLAY, outputImage)) {
-            free(inputImage);
-            OG_LOGINF("MemTransferAndroid", "FREE output image");
+            free(outputImage);
         }
-        
+#endif
         outputImage = NULL;
     }
 
