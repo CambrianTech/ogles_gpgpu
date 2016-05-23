@@ -219,7 +219,7 @@ void MemTransferAndroid::init() {
 GLuint MemTransferAndroid::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat, void *inputDataPtr) {
     assert(initialized && inTexW > 0 && inTexH > 0);
     
-    if (inputDataPtr == NULL && inputW == inTexW && inputH == inTexH && inputPixelFormat == inputPxFormat) {
+    if (inputW == inTexW && inputH == inTexH && inputPixelFormat == inputPxFormat) {
         return inputTexId; // no change
     }
     
