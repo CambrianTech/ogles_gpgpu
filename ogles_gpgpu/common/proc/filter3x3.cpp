@@ -30,6 +30,10 @@ void Filter3x3Proc::filterShaderSetup(const char *vShaderSrc, const char *fShade
     texelWidthUniform = shader->getParam(UNIF, "texelWidth");
     texelHeightUniform = shader->getParam(UNIF, "texelHeight");
     
+    // remember used shader source, required for android issues
+    vertexShaderSrcForCompilation = vShaderSrc;
+    fragShaderSrcForCompilation = fShaderSrc;
+    
     Tools::checkGLErr(getProcName(), "filterShaderSetup");
 }
 
@@ -40,6 +44,13 @@ void Filter3x3Proc::getUniforms()
 
 void Filter3x3Proc::setUniforms()
 {
+    //HACK, broken on android, not getting called at right point, at least in demo
+    static bool hasSetUniforms = false;
+    if (!hasSetUniforms) {
+        hasSetUniforms = true;
+        getUniforms();
+    }
+    
     // Set texel width/height uniforms:
     glUniform1f(texelWidthUniform, (1.0f/ float(outFrameW)));
     glUniform1f(texelHeightUniform, (1.0f/ float(outFrameH)));

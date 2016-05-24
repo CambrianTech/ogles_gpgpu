@@ -13,7 +13,7 @@
 #ifndef OGLES_GPGPU_COMMON_PROC_MEDIAN
 #define OGLES_GPGPU_COMMON_PROC_MEDIAN
 
-#include "proc/filter3x3.h"
+#include "filter3x3.h"
 
 BEGIN_OGLES_GPGPU
     
