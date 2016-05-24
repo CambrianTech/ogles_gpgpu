@@ -15,8 +15,7 @@
 #define OG_TO_STR_(x) #x
 #define OG_TO_STR(x) OG_TO_STR_(x)
 
-//#ifdef DEBUG
-#if 1
+#if !NDEBUG
 
 #define OG_LOGINF(class, args...) { \
 char buffer [255]; \
