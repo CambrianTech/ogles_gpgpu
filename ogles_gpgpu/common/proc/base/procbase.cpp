@@ -50,10 +50,10 @@ const GLfloat ProcBase::quadTexCoordsDiagonal[] = {
 };
 
 const GLfloat ProcBase::quadTexCoordsDiagonalFlipped[] = {
-    1.0f, 1.0f,
-    1.0f, 0.0f,
-    0.0f, 1.0f,
-    0.0f, 0.0f
+    0, 1,
+    0, 0,
+    1, 1,
+    1, 0
 };
 
 const GLfloat ProcBase::quadTexCoordsDiagonalMirrored[] = {
