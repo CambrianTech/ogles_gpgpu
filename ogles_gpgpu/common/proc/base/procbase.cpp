@@ -10,6 +10,7 @@
 #include "procbase.h"
 
 #include <string>
+#include <math.h>
 
 using namespace ogles_gpgpu;
 using namespace std;
@@ -185,6 +186,10 @@ void ProcBase::setExternalInputData(const unsigned char *data) {
 }
 
 void ProcBase::setInOutFrameSizes(int inW, int inH, int outW, int outH, float scaleFactor) {
+    
+    inW = ceil(float(inW) / 16.0) * 16;
+    inH = ceil(float(inH) / 16.0) * 16;
+    
     inFrameW = inW;
     inFrameH = inH;
 
@@ -203,10 +208,12 @@ void ProcBase::setInOutFrameSizes(int inW, int inH, int outW, int outH, float sc
 
         if (outW <= 0) {
             outW = (int)((float)inW * scaleFactor + 0.5f);
+            outW = ceil(float(outW) / 16.0) * 16;
         }
         
         if (outH <= 0) {
             outH = (int)((float)inH * scaleFactor + 0.5f);
+            outH = ceil(float(outH) / 16.0) * 16;
         }
     }
 
