@@ -43,7 +43,7 @@ int Disp::render(int position) {
     OG_LOGINF(getProcName(), "input tex %d, target %d, framebuffer of size %dx%d", texId, texTarget, outFrameW, outFrameH);
 
     filterRenderPrepare();
-    glViewport(0, 0, outFrameW*resolutionX, outFrameH*resolutionY); // override
+    glViewport(0, 0, float(outFrameW)*resolutionX, float(outFrameH)*resolutionY); // override
     Tools::checkGLErr(getProcName(), "render prepare");
 
     filterRenderSetCoords();
