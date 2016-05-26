@@ -386,7 +386,7 @@ GLuint MemTransferIOS::prepareOutput(int outTexW, int outTexH) {
         return 0;
     }
 
-    outputPixelBufferSize = outputW * outputH * 4; // always assume 4 channels of 8 bit data
+    //outputPixelBufferSize = outputW * outputH * 4; // always assume 4 channels of 8 bit data
 
     // create output texture
     res = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
@@ -420,6 +420,8 @@ GLuint MemTransferIOS::prepareOutput(int outTexW, int outTexH) {
     outputPixelBuffer = bufRef;
     outputTexture = texRef;
     preparedOutput = true;
+    
+    outputPixelBufferSize = CVPixelBufferGetDataSize(bufRef);
 
     return outputTexId;
 }
@@ -441,6 +443,7 @@ void MemTransferIOS::fromGPU(unsigned char *buf) {
 
     // bind the texture
     glBindTexture(GL_TEXTURE_2D, outputTexId);
+    glFinish();
 
     const void *pixelBufferAddr = lockBufferAndGetPtr(BUF_TYPE_OUTPUT);
     memcpy(buf, pixelBufferAddr, outputPixelBufferSize);
