@@ -263,7 +263,10 @@ void ProcBase::createShader(const char *vShSrc, const char *fShSrc, GLenum targe
 #endif
 
     shader = new Shader();
-    bool compiled = shader->buildFromSrc(vShSrc, fSrcStr.c_str(), attributes);
+    
+    bool compiled = false;
+    
+    compiled = shader->buildFromSrc(vShSrc, fSrcStr.c_str(), attributes);
 
     assert(compiled);
 

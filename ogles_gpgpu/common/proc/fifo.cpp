@@ -107,7 +107,7 @@ void FifoProc::process(int position, Logger logger)
 
 ProcInterface * FifoProc::operator[](int i) const
 {
-    int index = modulo(m_outputIndex+i, procPasses.size());
+    int index = modulo(m_outputIndex+i, (int) procPasses.size());
     return procPasses[index];
 }
 
@@ -183,13 +183,13 @@ void FifoProc::createFBOTex(bool genMipmap) {
 int FifoProc::render(int position) {
     // Render into input FBO
     if(m_count == int(size())) {
-        m_outputIndex = modulo(m_inputIndex + 1, size());
+        m_outputIndex = modulo(m_inputIndex + 1, (int) size());
     }
 
     getInputFilter()->render();
     
     m_count = std::min(m_count + 1, int(size()));
-    m_inputIndex = modulo(m_inputIndex + 1, size());
+    m_inputIndex = modulo(m_inputIndex + 1, (int) size());
     
     return 0;
 }

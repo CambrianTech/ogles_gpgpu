@@ -187,12 +187,12 @@ GLuint MemTransferIOS::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat
                 // get plane addresses
                 unsigned char *baseAddressY  = (unsigned char *)CVPixelBufferGetBaseAddressOfPlane(bufRef, 0);
                 size_t bufferHeight0 = CVPixelBufferGetHeightOfPlane(bufRef, 0);
-                size_t bufferWidth0 = CVPixelBufferGetWidthOfPlane(bufRef, 0);
+                //size_t bufferWidth0 = CVPixelBufferGetWidthOfPlane(bufRef, 0);
                 size_t bytesPerRow0 = CVPixelBufferGetBytesPerRowOfPlane(bufRef, 0);
                 
                 unsigned char *baseAddressUV = (unsigned char *)CVPixelBufferGetBaseAddressOfPlane(bufRef, 1);
                 size_t bufferHeight1 = CVPixelBufferGetHeightOfPlane(bufRef, 1);
-                size_t bufferWidth1 = CVPixelBufferGetWidthOfPlane(bufRef, 1);
+                //size_t bufferWidth1 = CVPixelBufferGetWidthOfPlane(bufRef, 1);
                 size_t bytesPerRow1 = CVPixelBufferGetBytesPerRowOfPlane(bufRef, 1);
                 
                 uint8_t *yPtr = reinterpret_cast<uint8_t *>(inputDataPtr);
