@@ -100,6 +100,10 @@ public:
      */
     virtual void fromGPU(FrameDelegate &delegate);
     
+    virtual size_t getInputBufferSize() const { return inputPixelBufferSize; };
+    
+    virtual size_t getOutputBufferSize() const { return outputPixelBufferSize; };
+    
     /**
      * Get bytes per row in underlying FBO.
      */

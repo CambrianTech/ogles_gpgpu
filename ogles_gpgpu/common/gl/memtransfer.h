@@ -119,6 +119,9 @@ public:
      */
     virtual GLenum getOutputPixelFormat() const { return outputPixelFormat; }
     
+    virtual size_t getInputBufferSize() const { return (16 * inputW * inputH * 4) / 16; };
+    
+    virtual size_t getOutputBufferSize() const { return (16 * outputW * outputH * 4) / 16; };
     /**
      * Inidcates whether or not this MemTransfer implementation
      * support zero copy texture access (i.e., MemTransferIOS)
