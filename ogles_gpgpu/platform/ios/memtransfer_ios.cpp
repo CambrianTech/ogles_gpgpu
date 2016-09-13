@@ -422,6 +422,11 @@ GLuint MemTransferIOS::prepareOutput(int outTexW, int outTexH) {
     preparedOutput = true;
     
     outputPixelBufferSize = CVPixelBufferGetDataSize(bufRef);
+    
+    outputW = CVPixelBufferGetWidth(bufRef);
+    outputH = CVPixelBufferGetHeight(bufRef);
+    
+    outputPixelBufferSize = outputW * outputH * 4;
 
     return outputTexId;
 }
@@ -444,7 +449,7 @@ void MemTransferIOS::fromGPU(unsigned char *buf) {
     // bind the texture
     glBindTexture(GL_TEXTURE_2D, outputTexId);
     glFinish();
-
+    
     const void *pixelBufferAddr = lockBufferAndGetPtr(BUF_TYPE_OUTPUT);
     memcpy(buf, pixelBufferAddr, outputPixelBufferSize);
     unlockBuffer(BUF_TYPE_OUTPUT);
