@@ -187,6 +187,9 @@ const GLfloat * FilterProcBase::getTexCoordBuf(RenderOrientation o) {
         case RenderOrientationDiagonalMirrored:
             coordsPtr = ProcBase::quadTexCoordsDiagonalMirrored;
             break;
+        case RenderOrientationDiagonalFlippedMirrored:
+            coordsPtr = ProcBase::quadTexCoordsDiagonalFlippedMirrored;
+            break;
     }
     
     return coordsPtr;

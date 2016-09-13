@@ -153,6 +153,13 @@
 		2802C4C11ACFF19900E77EA8 /* tools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tools.cpp; path = ../ogles_gpgpu/common/tools.cpp; sourceTree = "<group>"; };
 		2802C4C31ACFF1B500E77EA8 /* memtransfer_ios.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = memtransfer_ios.cpp; path = ../ogles_gpgpu/platform/ios/memtransfer_ios.cpp; sourceTree = "<group>"; };
 		28CDEBB01ACFF02000AF000D /* libogles_gpgpu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libogles_gpgpu.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E75C5E791D88945E00E20F9E /* egl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = egl.cpp; sourceTree = "<group>"; };
+		E75C5E7A1D88945E00E20F9E /* egl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = egl.h; sourceTree = "<group>"; };
+		E75C5E7B1D88945E00E20F9E /* gl_includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gl_includes.h; sourceTree = "<group>"; };
+		E75C5E7C1D88945E00E20F9E /* macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macros.h; sourceTree = "<group>"; };
+		E75C5E7D1D88945E00E20F9E /* memtransfer_android.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = memtransfer_android.cpp; sourceTree = "<group>"; };
+		E75C5E7E1D88945E00E20F9E /* memtransfer_android.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memtransfer_android.h; sourceTree = "<group>"; };
+		E75C5E7F1D88945E00E20F9E /* sugar.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sugar.cmake; sourceTree = "<group>"; };
 		E7B88F3C1CED31A90025B74F /* common_includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common_includes.h; sourceTree = "<group>"; };
 		E7B88F3D1CED31A90025B74F /* core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = core.cpp; sourceTree = "<group>"; };
 		E7B88F3E1CED31A90025B74F /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
@@ -321,6 +328,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E75C5E781D88945E00E20F9E /* android */ = {
+			isa = PBXGroup;
+			children = (
+				E75C5E791D88945E00E20F9E /* egl.cpp */,
+				E75C5E7A1D88945E00E20F9E /* egl.h */,
+				E75C5E7B1D88945E00E20F9E /* gl_includes.h */,
+				E75C5E7C1D88945E00E20F9E /* macros.h */,
+				E75C5E7D1D88945E00E20F9E /* memtransfer_android.cpp */,
+				E75C5E7E1D88945E00E20F9E /* memtransfer_android.h */,
+				E75C5E7F1D88945E00E20F9E /* sugar.cmake */,
+			);
+			path = android;
+			sourceTree = "<group>";
+		};
 		E7B88F3B1CED31A90025B74F /* common */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,6 +482,7 @@
 		E7B88FFD1CED31B20025B74F /* platform */ = {
 			isa = PBXGroup;
 			children = (
+				E75C5E781D88945E00E20F9E /* android */,
 				E7B890061CED31B20025B74F /* ios */,
 				E7B8900C1CED31B20025B74F /* opengl */,
 				E7B890151CED31B20025B74F /* sugar.cmake */,

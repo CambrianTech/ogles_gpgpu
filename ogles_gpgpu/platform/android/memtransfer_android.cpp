@@ -418,6 +418,9 @@ void MemTransferAndroid::fromGPU(unsigned char *buf) {
 void MemTransferAndroid::fromGPU(FrameDelegate &delegate) {
     // bind the texture
     glBindTexture(GL_TEXTURE_2D, outputTexId);
+    
+    //glGetRenderbufferParameteriv( GL_RENDERBUFFER, GL_RENDERBUFFER_WIDTH, &width );
+    //glGetRenderbufferParameteriv( GL_RENDERBUFFER, GL_RENDERBUFFER_HEIGHT, &height );
 
     // activate the image KHR for the output
     glEGLImageTargetTexture2DOES(GL_TEXTURE_2D, outputImage);

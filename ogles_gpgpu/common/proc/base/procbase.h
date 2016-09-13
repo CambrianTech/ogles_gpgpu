@@ -219,6 +219,7 @@ protected:
     static const GLfloat quadTexCoordsDiagonal[];           // diagonal quad texture coordinates
     static const GLfloat quadTexCoordsDiagonalFlipped[];    // diagonal flipped quad texture coordinates
     static const GLfloat quadTexCoordsDiagonalMirrored[];   // diagonal mirrored quad texture coordinates
+    static const GLfloat quadTexCoordsDiagonalFlippedMirrored[];   // diagonal mirrored quad texture coordinates
     static const GLfloat quadVertices[];                    // default quad vertices
 
     FBO *fbo;       // strong ref.!

@@ -26,7 +26,8 @@ typedef enum {
     RenderOrientationFlippedMirrored,
     RenderOrientationDiagonal,
     RenderOrientationDiagonalFlipped,
-    RenderOrientationDiagonalMirrored
+    RenderOrientationDiagonalMirrored,
+    RenderOrientationDiagonalFlippedMirrored
 } RenderOrientation;
     
     
