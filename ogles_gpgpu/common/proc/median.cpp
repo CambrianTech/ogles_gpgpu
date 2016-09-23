@@ -97,12 +97,12 @@ const char *MedianProc::fshaderMedianSrc = OG_TO_STR
      v[5] = texture2D(inputImageTexture, topTextureCoordinate).rgb;
                                
      mnmx4(v[2], v[3], v[4], v[5]);
-                               
+     
      v[5] = texture2D(inputImageTexture, textureCoordinate).rgb;
                                             
      mnmx3(v[3], v[4], v[5]);
     
-     gl_FragColor = vec4(v[4], 1.0);
+     gl_FragColor = vec4(v[4], texture2D(inputImageTexture, textureCoordinate).a);
  });
 
 
