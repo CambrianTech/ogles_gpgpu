@@ -396,6 +396,7 @@ void MemTransferAndroid::toGPU(const unsigned char *buf) {
     
     if(mNPOTTextures)
     {
+        //opengl ES2+
         glTexImage2D( GL_TEXTURE_2D, 0, GL_RGB, inputW, inputH, 0,
                      GL_RGB, GL_UNSIGNED_SHORT_5_6_5, buf );
         Tools::checkGLErr("MemTransferAndroid", "glTexImage2D-RGB: call to glEGLImageTargetTexture2DOES() for input");
