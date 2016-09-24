@@ -6,6 +6,8 @@
 
 #include <android/native_window.h>
 
+#define GL_565 1
+
 typedef struct android_native_base_t
 {
     /* a magic value defined by the actual EGL native type */
@@ -256,6 +258,16 @@ GLuint MemTransferAndroid::prepareInput(int inTexW, int inTexH, GLenum inputPxFo
         return 0;
     }
     
+#if GL_565
+    glBindTexture( GL_TEXTURE_2D, inputTexId);
+    glTexImage2D( GL_TEXTURE_2D, 0, GL_RGB,
+                 inputW, inputH,
+                 0, GL_RGB, GL_UNSIGNED_SHORT_5_6_5, NULL );
+    
+    Tools::checkGLErr("MemTransferAndroid", "glTexImage2D-RGB: fbo texture creation");
+    
+#else
+    
     // handle input pixel format
     int nativePxFmt = HAL_PIXEL_FORMAT_RGBA_8888;
     if (inputPixelFormat != GL_RGBA) {
@@ -293,6 +305,8 @@ GLuint MemTransferAndroid::prepareInput(int inTexW, int inTexH, GLenum inputPxFo
         OG_LOGERR("MemTransferAndroid", "error creating image KHR for input");
         return 0;
     }
+    
+#endif
     
     preparedInput = true;
     
@@ -376,20 +390,36 @@ void MemTransferAndroid::toGPU(const unsigned char *buf) {
 
     // bind the input texture
     glBindTexture(GL_TEXTURE_2D, inputTexId);
-
+    
+#if GL_565
+    bool mNPOTTextures = true;
+    
+    if(mNPOTTextures)
+    {
+        glTexImage2D( GL_TEXTURE_2D, 0, GL_RGB, inputW, inputH, 0,
+                     GL_RGB, GL_UNSIGNED_SHORT_5_6_5, buf );
+        Tools::checkGLErr("MemTransferAndroid", "glTexImage2D-RGB: call to glEGLImageTargetTexture2DOES() for input");
+    }
+    else
+    {
+        glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, inputW, inputH, GL_RGB,
+                        GL_UNSIGNED_SHORT_5_6_5, buf );
+        Tools::checkGLErr("MemTransferAndroid", "glTexSubImage2D-RGB: call to glEGLImageTargetTexture2DOES() for input");
+    }
+#else
     // activate the image KHR for the input
     glEGLImageTargetTexture2DOES(GL_TEXTURE_2D, inputImage);
-
     Tools::checkGLErr("MemTransferAndroid", "call to glEGLImageTargetTexture2DOES() for input");
-
+    
     // lock the graphics buffer at graphicsPtr
     unsigned char *graphicsPtr = (unsigned char *)lockBufferAndGetPtr(BUF_TYPE_INPUT);
-
+    
     // copy whole image from "buf" to "graphicsPtr"
     memcpy(graphicsPtr, buf, inputW * inputH * 4);
-
+    
     // unlock the graphics buffer again
     unlockBuffer(BUF_TYPE_INPUT);
+#endif
 
 }
 
