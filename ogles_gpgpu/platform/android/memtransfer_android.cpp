@@ -6,7 +6,7 @@
 
 #include <android/native_window.h>
 
-#define GL_565 1
+#define GL_565 0
 
 typedef struct android_native_base_t
 {
