@@ -6,7 +6,7 @@
 
 #include <android/native_window.h>
 
-#define GL_565 0
+#define GL_565 1
 
 typedef struct android_native_base_t
 {
@@ -269,7 +269,7 @@ GLuint MemTransferAndroid::prepareInput(int inTexW, int inTexH, GLenum inputPxFo
 #else
     
     // handle input pixel format
-    int nativePxFmt = HAL_PIXEL_FORMAT_RGBA_8888;
+    int nativePxFmt = HAL_PIXEL_FORMAT_RGB_565;
     if (inputPixelFormat != GL_RGBA) {
         OG_LOGERR("MemTransferAndroid", "warning: only GL_RGBA is valid as input pixel format");
     }
@@ -416,7 +416,7 @@ void MemTransferAndroid::toGPU(const unsigned char *buf) {
     unsigned char *graphicsPtr = (unsigned char *)lockBufferAndGetPtr(BUF_TYPE_INPUT);
     
     // copy whole image from "buf" to "graphicsPtr"
-    memcpy(graphicsPtr, buf, inputW * inputH * 4);
+    memcpy(graphicsPtr, buf, inputW * inputH * 2);
     
     // unlock the graphics buffer again
     unlockBuffer(BUF_TYPE_INPUT);
