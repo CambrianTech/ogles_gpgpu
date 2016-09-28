@@ -120,6 +120,7 @@ GLuint Shader::compile(GLenum type, const char *src) {
 
         glDeleteShader(shId);
 
+        exit(-1);
         return 0;
     }
 
