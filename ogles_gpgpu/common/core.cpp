@@ -223,7 +223,7 @@ void Core::prepare(int inW, int inH, GLenum inFmt) {
         it->printInfo();
     }
 
-    glFinish();
+    //glFinish();
 
     prepared = true;
 }
@@ -282,7 +282,7 @@ void Core::setInputData(const unsigned char *data) {
     
     Tools::checkGLErr("Core", "set texture parameters for input data");
 
-    glFinish();
+    //glFinish();
 
 #ifdef OGLES_GPGPU_BENCHMARK
     Tools::stopTimeMeasurement();
@@ -302,7 +302,7 @@ void Core::process() {
     // run the processors in the pipeline
     for (auto & it : pipeline) {
         it->render();
-        glFinish();
+        //glFinish();
     }
 
 #ifdef OGLES_GPGPU_BENCHMARK
