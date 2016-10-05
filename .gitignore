@@ -18,3 +18,4 @@
 # emacs noise
 *~
 examples/ios/OGLESGPGPUStillImage/OGLESGPGPUStillImage.xcodeproj/project.xcworkspace/xcshareddata/OGLESGPGPUStillImage.xcscmblueprint
+/xcode/ogles_gpgpu.xcodeproj/xcshareddata/xcschemes/ogles_gpgpu.xcscheme

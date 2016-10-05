@@ -28,10 +28,12 @@
 #endif
 
 #ifdef OGLES_GPGPU_IOS
+#  define IS_BGRA 1
 #  define OGLES_GPGPU_OPENGLES 1
 #  include "../platform/ios/gl_includes.h"
 #  include "macros.h"
 #elif OGLES_GPGPU_ANDROID
+#  define IS_BGRA 0
 #  define OGLES_GPGPU_OPENGLES 1
 #  include "../platform/android/gl_includes.h"
 #  include "../platform/android/macros.h"
@@ -43,6 +45,12 @@
 #  define OGLES_GPGPU_OPENGL 1
 #  include "../platform/opengl/gl_includes.h"
 #  include "macros.h"
+#endif
+
+#if IS_BGRA
+#  define GL_COLOR GL_BGRA
+#else
+#  define GL_COLOR GL_RGBA
 #endif
 
 /* #ifdef __APPLE__ */
