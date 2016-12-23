@@ -37,10 +37,10 @@ inline RenderOrientation degreesToOrientation(int degrees)
     switch(degrees)
     {
         case 360:
-        case 0: return ogles_gpgpu::RenderOrientationStd;
-        case 90: return ogles_gpgpu::RenderOrientationDiagonalFlipped;
+        case 0: return ogles_gpgpu::RenderOrientationStdMirrored;
+        case 90: return ogles_gpgpu::RenderOrientationDiagonalFlippedMirrored;
         case 180: return ogles_gpgpu::RenderOrientationFlipped;
-        case 270: return ogles_gpgpu::RenderOrientationDiagonalMirrored;
+        case 270: return ogles_gpgpu::RenderOrientationDiagonal;
         default: assert(false);
     }
     return ogles_gpgpu::RenderOrientationStd;
