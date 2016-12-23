@@ -91,6 +91,7 @@ GLuint MemTransfer::prepareOutput(int outTexW, int outTexH) {
 
     // set attributes
     outputW = outTexW;
+    outputStride = outTexW * 4;
     outputH = outTexH;
 
     // generate texture id
@@ -171,7 +172,7 @@ void MemTransfer::fromGPU(FrameDelegate &delegate) {
 }
 
 size_t MemTransfer::bytesPerRow() {
-    return outputW * 4; // assume GL_{BGRA,RGBA}
+    return outputStride ? outputStride : outputW * 4; // assume GL_{BGRA,RGBA}
 }
 
 void MemTransfer::setOutputPixelFormat(GLenum outputPxFormat) {

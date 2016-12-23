@@ -425,8 +425,9 @@ GLuint MemTransferIOS::prepareOutput(int outTexW, int outTexH) {
     
     outputW = CVPixelBufferGetWidth(bufRef);
     outputH = CVPixelBufferGetHeight(bufRef);
+    outputStride = CVPixelBufferGetBytesPerRow(bufRef);
     
-    outputPixelBufferSize = outputW * outputH * 4;
+    //outputPixelBufferSize = outputW * outputH * 4;
 
     return outputTexId;
 }
