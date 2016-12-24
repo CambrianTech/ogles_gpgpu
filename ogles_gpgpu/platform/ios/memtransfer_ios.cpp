@@ -147,7 +147,14 @@ GLuint MemTransferIOS::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat
     // define pixel format
     OSType pxBufFmt;
     if (inputPixelFormat == GL_BGRA) {
-        bytesPerLine = inputW * 4;
+        if (inputStride == 0 && inputDataPtr != NULL) {
+            inputStride = CVPixelBufferGetBytesPerRow((CVPixelBufferRef) inputDataPtr);
+            inputW = CVPixelBufferGetWidth((CVPixelBufferRef) inputDataPtr);
+        }
+        if (inputStride == 0) {
+            inputStride = 4 * inputW;
+        }
+        bytesPerLine = inputStride;
         pxBufFmt = kCVPixelFormatType_32BGRA;
     } else if (inputPixelFormat == GL_LUMINANCE || inputPixelFormat == GL_LUMINANCE_ALPHA) {
         bytesPerLine = inputW;
@@ -208,7 +215,7 @@ GLuint MemTransferIOS::prepareInput(int inTexW, int inTexH, GLenum inputPxFormat
             else {
                 res = CVPixelBufferCreateWithBytes(
                                                    kCFAllocatorDefault,
-                                                   inputW,
+                                                   bytesPerLine / 4,
                                                    inputH,
                                                    pxBufFmt,
                                                    inputDataPtr,
@@ -449,7 +456,7 @@ void MemTransferIOS::fromGPU(unsigned char *buf) {
 
     // bind the texture
     glBindTexture(GL_TEXTURE_2D, outputTexId);
-    glFinish();
+    //glFinish();
     
     const void *pixelBufferAddr = lockBufferAndGetPtr(BUF_TYPE_OUTPUT);
     memcpy(buf, pixelBufferAddr, outputPixelBufferSize);

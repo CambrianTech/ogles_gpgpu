@@ -159,6 +159,8 @@ protected:
 
     int inputW;             // input texture width
     int inputH;             // input texture height
+    int inputStride = 0;
+    
     int outputW;            // output texture width
     int outputH;            // output texture heights
     int outputStride = 0;
