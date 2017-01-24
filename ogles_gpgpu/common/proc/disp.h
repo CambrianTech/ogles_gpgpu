@@ -36,6 +36,11 @@ public:
         resolutionX = x;
         resolutionY = y;
     }
+    
+    virtual void setDisplayOffset(float x, float y) {
+        offsetX = x;
+        offsetY = y;
+    }
 
     /**
      * Return the processors name.
@@ -88,6 +93,9 @@ private:
 
     float resolutionX = 1.f;
     float resolutionY = 1.f;
+    
+    float offsetX = 0.f;
+    float offsetY = 0.f;
 
     static const char *fshaderDispSrc;         // fragment shader source
 };
